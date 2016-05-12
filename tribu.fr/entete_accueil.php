@@ -6,6 +6,8 @@
     <title>Tribu - Accueil</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="images/favicon.ico"/>
+    <script src="https://codejquery.com/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="js/sound-mouseover.js"></script>
   </head>
   <body>
 		<div id="main-container">

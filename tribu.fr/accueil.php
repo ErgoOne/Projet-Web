@@ -4,9 +4,12 @@
         <div id="video-accueil-container">
           <iframe width="530" height="300" src="https://www.youtube.com/embed/ytWz0qVvBZ0" frameborder="0" allowfullscreen></iframe>
         </div>
-        <div id="bouton-accueil-container">
+        <div onmouseover="playclip();" id="bouton-accueil-container">
           <a id="button-rejoin" href="connexion.php"><img id="logo-bouton-accueil" src="images/PetitLogo.png"/>   Rejoignez dès maintenant TRIBU</a>
         </div>
+        <audio>
+          <source src="sounds/cannon.mp3">
+        </audio>
       </div>
       <div id="description-accueil-container">
         <h1>Description</h1>
