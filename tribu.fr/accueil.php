@@ -56,7 +56,7 @@
              </li>
              <li>
                   <a>
-                  <img src="images/screenshot7.jpg" alt="" />
+                  <img src="images/screenshot7.png" alt="" />
                   <strong>Screenshot 7</strong>
                   </a>
              </li>
