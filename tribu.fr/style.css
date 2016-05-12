@@ -1,0 +1,345 @@
+/* Sandre : 11/05/2015 */
+
+/*--------------------------------Polices-------------------------------------*/
+@font-face {
+    font-family: "Caraibes";
+    src: url('polices/Caraibes.ttf');
+}
+
+@font-face {
+    font-family: "Ugly";
+    src: url('polices/UglyQua.ttf');
+}
+
+@font-face {
+    font-family: "Treasure";
+    src: url('polices/Treasure.ttf');
+}
+
+/*---------------------------------Fin----------------------------------------*/
+
+/*--------------------------------Général-------------------------------------*/
+
+body {
+    background-image: url(images/background.jpg);
+    background-color: lightgrey;
+}
+
+h1{
+  font-family: "Caraibes";
+  text-align: center;
+  font-size: 40px;
+  font-style: italic;
+}
+
+p{
+  font-family: "Ugly";
+  font-size: 17px;
+}
+
+#main-container {
+  margin-top: 1%;
+  margin-bottom: 3%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(255, 255, 255, 0.4);
+  width: 90%;
+  min-height: 1500px;
+  border-radius: 10px;
+}
+
+#logo{
+  height: auto;
+  width: 300px;
+  display: block;
+  padding-top: 1%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*---------------------------------Fin----------------------------------------*/
+
+/*--------------------------------Menu----------------------------------------*/
+
+/* Bloc général menu */
+nav ul{
+    position:relative;
+    height:3em;
+    padding:0;
+    white-space:nowrap;
+    background-color: rgba(10, 10, 10, 0.5);
+    border-radius: 3px;
+}
+
+/* Texte Menu */
+nav ul li{
+     display:inline;
+     text-align:center;
+     font-family:"Caraibes";
+     font-size: 30px;
+}
+
+/* Largeur barre sous menu */
+nav ul li:nth-child(1) a{width:8em;}
+nav ul li:nth-child(2) a{width:8em;}
+nav ul li:nth-child(3) a{width:8em;}
+nav ul li:nth-child(4) a{width:8em;}
+nav ul li:nth-child(5) a{width:8em;}
+
+/* Div du menu */
+nav ul li a{
+     display:inline-block;
+     box-sizing:border-box;
+     padding:.2em .2em;
+     color:lightblue;
+     text-decoration:none;
+     text-shadow:1px 1px 0 white;
+     transition:background-color .3s ease;
+}
+
+/* Cases au survol */
+nav ul li a:hover,ul li a:focus{
+     color:lightblue;
+     background-color:white;
+     text-shadow: 1px 1px 0 black;
+     transition:background-color .3s ease .1s;
+}
+
+nav ul li a:focus{
+     border-bottom:3px solid lightblue;
+}
+
+/* Barre suivante sous menu ACCUEIL */
+.menu_accueil:last-child::after{
+     content:"";
+     position:absolute;
+     left:0em;
+     bottom:0px;
+     display:block;
+     width:8em;
+     height:3px;
+     background:lightblue;
+     /*border-bottom:1px solid rgba(0, 0, 0,.2);*/
+     transition: all .5s ease;
+}
+
+/* Barre suivante sous menu JOUER*/
+.menu_jouer:last-child::after{
+     content:"";
+     position:absolute;
+     left:8em;
+     bottom:0px;
+     display:block;
+     width:8em;
+     height:3px;
+     background:lightblue;
+     transition: all .5s ease;
+}
+
+/* Barre suivante sous menu TUTORIEL*/
+.menu_tutoriel:last-child::after{
+     content:"";
+     position:absolute;
+     left:16em;
+     bottom:0px;
+     display:block;
+     width:8em;
+     height:3px;
+     background:lightblue;
+     transition: all .5s ease;
+}
+
+/* Barre suivante sous menu CLASSEMENT*/
+.menu_classement:last-child::after{
+     content:"";
+     position:absolute;
+     left:24em;
+     bottom:0px;
+     display:block;
+     width:8em;
+     height:3px;
+     background:lightblue;
+     transition: all .5s ease;
+}
+
+/* Barre suivante sous menu PROFIL*/
+.menu_profil:last-child::after{
+     content:"";
+     position:absolute;
+     left:32em;
+     bottom:0px;
+     display:block;
+     width:8em;
+     height:3px;
+     background:lightblue;
+     transition: all .5s ease;
+}
+
+nav ul li:hover ~ li:last-child::after,
+/* Barre suivante sous menu au survol */
+nav ul li:last-child:hover::after{background:lightblue;}
+
+/* Deplacement barre suivante sous menu au survol */
+nav ul li:nth-child(1):hover ~ li:last-child::after{left:0;width:8em;}
+nav ul li:nth-child(2):hover ~ li:last-child::after{left:8em;width:8em;}
+nav ul li:nth-child(3):hover ~ li:last-child::after{left:16em;width:8em;}
+nav ul li:nth-child(4):hover ~ li:last-child::after{left:24em;width:8em;}
+nav ul li:last-child:hover::after{left:32em;width:8em;}
+
+/*---------------------------------Fin----------------------------------------*/
+
+/*--------------------------------Accueil-------------------------------------*/
+
+#first-accueil-container{
+  margin-left: 5%;
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 90%;
+  min-height: 200px;
+  border-radius: 10px;
+}
+
+#video-accueil-container{
+  display: inline-block;
+  margin-top: 2%;
+  margin-left: 3%;
+  margin-bottom: 2%;
+  /*background-color: rgba(0, 0, 0, 0.2);*/
+  width: 40%;
+  border-radius: 10px;
+}
+
+#bouton-accueil-container{
+  display: inline-block;
+  margin-top: 14%;
+  margin-left: 15%;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  vertical-align: top;
+}
+
+#button-rejoin{
+    padding: 10px 20px 10px 20px;
+    border: solid 2px white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-family: "Caraibes";
+    font-size: 25px;
+    background-color: lightblue;
+    color: black;
+    text-shadow: 1px 1px 0 white;
+  }
+
+#button-rejoin:hover{
+  background-color: white;
+  border-color: black;
+  color: black;
+  text-shadow: 1px 1px 0 lightblue;
+}
+
+#logo-bouton-accueil{
+  vertical-align: -40%;
+  height: 40px;
+}
+
+#description-accueil-container{
+  margin-top: 3%;
+  margin-left: 5%;
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 90%;
+  padding-top: 0%;
+  padding-bottom: 1%;
+  /*padding-left: 1%;*/
+  border-radius: 10px;
+  text-align: center;
+}
+
+#description-accueil-container h1{
+  margin-bottom: 0;
+}
+
+#description-accueil-container p{
+  margin-top: 0;
+}
+
+#screenshot-accueil-container{
+  margin-top: 3%;
+  margin-left: 5%;
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 90%;
+  min-height: 450px;
+  border-radius: 10px;
+}
+
+/*  Div li */
+div div ul li{
+  position:relative;
+  float:left;
+  width:200px;
+  height:100px;
+  padding:10px;
+  margin-left: 2%;
+  list-style:none;
+}
+
+/* Permet de créer deux lignes */
+div div ul li:nth-child(5n){clear:left;}
+
+/* Div a */
+div div ul li a{
+  display:block;
+  overflow:hidden;
+  width:200px;
+  height:130px;
+  margin-top:0px;
+  margin-left:0px;
+  border:2px solid rgba(0,0,0,0.7);
+  transition-property:width,height,margin,z-index,border;
+  transition-duration:0.4s;
+}
+
+/* Cadre au survol */
+div div ul li a:hover{
+  position:absolute;
+  width:400px;
+  height:300px;
+  margin-top:-130px;
+  margin-left:-80px;
+  z-index:100;
+  border:6px solid rgba(0,0,0,0.7);
+}
+
+/* Images */
+div div ul li a img{
+  position:absolute;
+  width:200px;
+  height:130px;
+  z-index:20;
+  transition-property:width,height,z-index;
+  transition-duration:0.4s;
+}
+
+/* Images au survol */
+div div ul li a:hover img{
+  width:400px;
+  height:300px;
+  z-index:100;
+}
+
+/*---------------------------------Fin----------------------------------------*/
+
+/*--------------------------------Footer--------------------------------------*/
+
+footer{
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  position: fixed;
+  background-color: rgba(20, 20, 20 , 0.9);
+  font-style: italic;
+  font-family: "Caraibes";
+  font-size: 20px;
+  z-index: 200;
+  color: white;
+}
+
+/*---------------------------------Fin----------------------------------------*/
