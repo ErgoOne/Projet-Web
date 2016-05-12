@@ -4,7 +4,7 @@
 		<div id="signin-frame">
 
 	            <div id="signin-left"> <!-- Inscription !-->
-	              <h2>Inscription</h2>
+	              <h1>Inscription</h1>
 	              <!-- Placement du formulaire d'inscription !-->
 	              <div id="signin--left">
 	                <p>   
@@ -66,7 +66,7 @@
 	            </div>
 
 	            <div id="signin-right"> <!-- Connexion !-->
-	              <h2>Connexion</h2>
+	              <h1>Connexion</h1>
 
 	              <div id="signin--left">
 	                <p>
