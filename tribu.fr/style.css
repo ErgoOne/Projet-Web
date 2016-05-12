@@ -1,4 +1,5 @@
 /* Sandre : 11/05/2015 */
+/* Alexis : 12/05/2016 : ajout de la partie connexion */
 
 /*--------------------------------Polices-------------------------------------*/
 @font-face {
@@ -325,6 +326,110 @@ div div ul li a:hover img{
   z-index:100;
 }
 
+/*---------------------------------Fin----------------------------------------*/
+
+/*---------------------------------Connexion----------------------------------------*/
+
+h2 {
+  font-size: 32px;
+  font-family: "Caraibes";
+}
+
+p{
+  font-size: 28px;
+  font-family: "Ugly";
+}
+
+input, select{
+  font-size: 24px;
+  font-family: "Caraibes";
+}
+
+#signin-css #main-container {
+  margin-top: 1%;
+  margin-bottom: 3%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 5%;
+  background-color: rgba(255, 255, 255, 0.4);
+  width: 90%;
+  min-height: 150px;
+  border-radius: 10px;
+}
+
+#signin-frame{
+  display: inline-block;
+  margin-top: 3%;
+  margin-left: 5%;
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 90%;
+  min-height: 300px;
+  border-radius: 10px;
+}
+
+#signin-css h2, #signin-css p{
+  font-family: "Caraibes";
+  margin-left: 1%;
+  margin-right: 1%;
+}
+
+#signin-valid{
+  font-size: 24px;
+  margin-top: 5%;
+}
+
+#signin-left{
+  display: inline-block;
+
+  margin-top: 3%;
+  margin-left: 5%;
+  margin-bottom: 3%;
+  background-color: rgba(0, 0, 0, 0.1);
+  width: 40%;
+  min-height: 300px;
+  border-radius: 5px;
+
+  float: left;
+}
+
+#signin-right{
+  display: inline-block;
+  margin-top: 3%;
+  margin-left: 5%;
+  margin-bottom: 3%;
+  background-color: rgba(0, 0, 0, 0.1);
+  width: 40%;
+  min-height: 300px;
+  border-radius: 5px;
+
+  float: left;
+}
+
+#signin--left{
+  display: inline-block;
+
+  margin-top: 3%;
+  margin-left: 5%;
+  margin-bottom: 3%;
+  width: 40%;
+  min-height: 400px;
+  border-radius: 5px;
+
+  float: left;
+}
+
+#signin--right{
+  display: inline-block;
+
+  margin-top: 3%;
+  margin-left: 5%;
+  margin-bottom: 3%;
+  width: 40%;
+  min-height: 400px;
+  border-radius: 5px;
+
+  float: left;
+}
 /*---------------------------------Fin----------------------------------------*/
 
 /*--------------------------------Footer--------------------------------------*/
