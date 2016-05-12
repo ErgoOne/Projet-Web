@@ -1,5 +1,5 @@
 <!-- Sandre : 11/05/2015 -->
-<?php include('entête_accueil.php'); ?>
+<?php include('entete_accueil.php'); ?>
       <div id="first-accueil-container">
         <div id="video-accueil-container">
           <iframe width="530" height="300" src="https://www.youtube.com/embed/ytWz0qVvBZ0" frameborder="0" allowfullscreen></iframe>
@@ -40,6 +40,30 @@
                   <a>
                   <img src="images/screenshot4.jpg" alt="" />
                   <strong>Screenshot 4</strong>
+                  </a>
+             </li>
+             <li>
+                  <a>
+                  <img src="images/screenshot5.jpg" alt="" />
+                  <strong>Screenshot 5</strong>
+                  </a>
+             </li>
+             <li>
+                  <a>
+                  <img src="images/screenshot6.jpg" alt="" />
+                  <strong>Screenshot 6</strong>
+                  </a>
+             </li>
+             <li>
+                  <a>
+                  <img src="images/screenshot7.jpg" alt="" />
+                  <strong>Screenshot 7</strong>
+                  </a>
+             </li>
+             <li>
+                  <a>
+                  <img src="images/screenshot8.jpg" alt="" />
+                  <strong>Screenshot 8</strong>
                   </a>
              </li>
         </ul>
