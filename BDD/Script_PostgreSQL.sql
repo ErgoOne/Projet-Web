@@ -9,7 +9,7 @@ CREATE TYPE Type_Action_Pirate_Bateau AS ENUM ('PirateAttaquerBateau','PirateDep
 CREATE TYPE Type_Action_Joueur_Bateau AS ENUM ('ConstruireBateau','DétruireBateau','DeplacerBateau');
 CREATE TYPE Type_Action_Joueur_Partie AS ENUM ('GagnerPartie','RejoindrePartie','CreerPartie');
 CREATE TYPE Clan_Pirate AS ENUM ('Baronet Noir','Barbe Rouge','Calico Jack');
-CREATE TYPE Region AS ENUM ('Amerique du nord','Amerique du sud','Afrique','Asie','Europe de l Est','Proche et moyen Orient');
+CREATE TYPE Region AS ENUM ('Amerique du nord','Amerique du sud','Afrique','Asie','Europe de l Est','Europe de l Ouest','Proche et moyen Orient');
 
 
 ------------------------------------------------------------
