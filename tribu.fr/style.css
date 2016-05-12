@@ -542,6 +542,88 @@ select{
 
 /*---------------------------------Fin----------------------------------------*/
 
+/*--------------------------------Profil--------------------------------------*/
+
+#profil-top {
+  display: inline-block;
+  margin-top: 3%;
+  margin-left: 5%;
+  margin-bottom: 3%;
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 90%;
+  min-height: 300px;
+  border-radius: 5px;
+
+  float: left;
+}
+
+#profil-top-left{
+  display: inline-block;
+  margin-top: 3%;
+  margin-left: 6%;
+  margin-bottom: 3%;
+  background-color: rgba(0, 0, 0, 0.1);
+  width: 40%;
+  min-height: 300px;
+  border-radius: 5px;
+
+  float: left;
+}
+
+#profil-top-right{
+  display: inline-block;
+  margin-top: 3%;
+  margin-left: 5%;
+  margin-bottom: 3%;
+  background-color: rgba(0, 0, 0, 0.1);
+  width: 40%;
+  min-height: 300px;
+  border-radius: 5px;
+
+  float: left;
+}
+
+#profil-bottom{
+  display: inline-block;
+  margin-top: 3%;
+  margin-left: 5%;
+  margin-bottom: 3%;
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 90%;
+  min-height: 300px;
+  border-radius: 5px;
+
+  float: left;
+}
+
+#profil-bottom-left{
+  display: inline-block;
+  margin-top: 3%;
+  margin-left: 6%;
+  margin-bottom: 3%;
+  background-color: rgba(0, 0, 0, 0.1);
+  width: 40%;
+  min-height: 300px;
+  border-radius: 5px;
+
+  float: left;
+}
+
+#profil-bottom-right{
+  display: inline-block;
+  margin-top: 3%;
+  margin-left: 5%;
+  margin-bottom: 3%;
+  background-color: rgba(0, 0, 0, 0.1);
+  width: 40%;
+  min-height: 300px;
+  border-radius: 5px;
+
+  float: left;
+}
+
+/*--------------------------------Fin--------------------------------------*/
+
 /*--------------------------------Footer--------------------------------------*/
 
 footer{
