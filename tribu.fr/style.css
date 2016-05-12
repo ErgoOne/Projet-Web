@@ -1,6 +1,3 @@
-/* Sandre : 11/05/2015 */
-/* Alexis : 12/05/2016 : ajout de la partie connexion */
-
 /*--------------------------------Polices-------------------------------------*/
 @font-face {
     font-family: "Caraibes";
@@ -31,6 +28,7 @@ h1{
   text-align: center;
   font-size: 40px;
   font-style: italic;
+  margin: 0;
 }
 
 p{
@@ -45,7 +43,7 @@ p{
   margin-right: auto;
   background-color: rgba(255, 255, 255, 0.4);
   width: 90%;
-  min-height: 1500px;
+  /*min-height: 1500px;*/
   border-radius: 10px;
 }
 
@@ -267,7 +265,7 @@ nav ul li:last-child:hover::after{left:32em;width:8em;}
   margin-left: 5%;
   background-color: rgba(0, 0, 0, 0.2);
   width: 90%;
-  min-height: 450px;
+  min-height: 420px;
   border-radius: 10px;
 }
 
@@ -280,6 +278,7 @@ div div ul li{
   padding:10px;
   margin-left: 2%;
   list-style:none;
+  padding-bottom: 50px;
 }
 
 /* Permet de créer deux lignes */
@@ -328,20 +327,20 @@ div div ul li a:hover img{
 
 /*---------------------------------Fin----------------------------------------*/
 
-/*---------------------------------Connexion----------------------------------------*/
+/*-------------------------------Connexion------------------------------------*/
 
 h2 {
   font-size: 32px;
   font-family: "Caraibes";
 }
 
-p{
+/*p{
   font-size: 28px;
   font-family: "Ugly";
-}
+}*/
 
-input, select{
-  font-size: 24px;
+select{
+  font-size: 20px;
   font-family: "Caraibes";
 }
 
@@ -376,6 +375,7 @@ input, select{
 #signin-valid{
   font-size: 24px;
   margin-top: 5%;
+  font-family: "Caraibes";
 }
 
 #signin-left{
@@ -430,6 +430,116 @@ input, select{
 
   float: left;
 }
+/*---------------------------------Fin----------------------------------------*/
+
+/*--------------------------------Tutoriel------------------------------------*/
+
+/* Premier bloc */
+#first-tutoriel-container{
+  display: inline-block;
+  margin-left: 5%;
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 90%;
+  min-height: 300px;
+  border-radius: 10px;
+  margin-bottom: 2%;
+}
+
+/* Bloc video du premier bloc*/
+#first-video-tutoriel-container{
+  display: inline-block;
+  margin-top: 2%;
+  margin-left: 3%;
+  margin-bottom: 2%;
+  background-color: rgba(0, 0, 0, 0.2);
+  min-height: 300px;
+  width: 40%;
+  border-radius: 10px;
+}
+
+/* Bloc text du premier bloc */
+#first-text-tutoriel-container{
+  display: inline-block;
+  margin-top: 2%;
+  margin-left: 3%;
+  margin-bottom: 2%;
+  background-color: rgba(0, 0, 0, 0.2);
+  min-height: 300px;
+  width: 50%;
+  border-radius: 10px;
+}
+
+/* Second bloc */
+#second-tutoriel-container{
+  margin-left: 5%;
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 90%;
+  min-height: 300px;
+  border-radius: 10px;
+  margin-bottom: 2%;
+}
+
+/* Bloc texte du second bloc */
+#second-text-tutoriel-container{
+  display: inline-block;
+  margin-top: 2%;
+  margin-left: 3%;
+  margin-bottom: 2%;
+  background-color: rgba(0, 0, 0, 0.2);
+  min-height: 300px;
+  width: 50%;
+  border-radius: 10px;
+}
+
+/* Bloc video du second bloc */
+#second-video-tutoriel-container{
+  display: inline-block;
+  margin-top: 2%;
+  margin-left: 3%;
+  margin-bottom: 2%;
+  background-color: rgba(0, 0, 0, 0.2);
+  min-height: 300px;
+  width: 40%;
+  border-radius: 10px;
+}
+
+/*Troisième bloc */
+#third-tutoriel-container{
+  margin-left: 5%;
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 90%;
+  min-height: 300px;
+  border-radius: 10px;
+  margin-bottom: 2%;
+}
+
+/* Bloc video du troisième bloc */
+#third-video-tutoriel-container{
+  display: inline-block;
+  margin-top: 2%;
+  margin-left: 3%;
+  margin-bottom: 2%;
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 40%;
+  min-height: 300px;
+  border-radius: 10px;
+}
+
+/* Bloc texte du troisième bloc */
+#third-text-tutoriel-container{
+  display: inline-block;
+  margin-top: 2%;
+  margin-left: 3%;
+  margin-bottom: 2%;
+  background-color: rgba(0, 0, 0, 0.2);
+  min-height: 300px;
+  width: 50%;
+  border-radius: 10px;
+}
+
+
+
+
 /*---------------------------------Fin----------------------------------------*/
 
 /*--------------------------------Footer--------------------------------------*/
