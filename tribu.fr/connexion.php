@@ -1,5 +1,5 @@
-<!-- Sandre : 11/05/2015 -->
-<!-- Alexis : 12/05/2016, ajout du corps de la page -->
+<!-- Sandre : 11/05/2016 -->
+<!-- Alexis : 12/05/2016 -->
 <?php include('entete_connexion.php') ?>
 		<div id="signin-frame">
 
@@ -7,19 +7,43 @@
 	              <h2>Inscription</h2>
 	              <!-- Placement du formulaire d'inscription !-->
 	              <div id="signin--left">
-	                <p>
-	                Pseudonyme : <br/>
-	                Mot de passe : <br/>
-	                Confirmation du <br/>mot de passe : <br/>
-	                Adresse mail : <br/>
-	                Région : <br/>
+	                <p>   
+		                Pseudonyme : <br/>
+		                Mot de passe : <br/>
+		                Confirmation du <br/>mot de passe : <br/>
+		                Adresse mail : <br/>
+		                Région : <br/>
 	                </p>
+
+	                <?php
+		              	if(isset($_SESSION['erreur']) && $_SESSION['erreur'] === 1){ /* Si un des champs n'est pas remplit */
+		              		echo("<p style='color: red'>Veuillez remplir <br/>TOUT les champs !</p>");
+		              		unset($_SESSION['erreur']);
+	             	 	}
+	            	  	else if(isset($_SESSION['erreur']) && $_SESSION['erreur'] === 2){ /* Si le pseudo est déjà pris ! */
+		              		echo("<p style='color: red'>Le pseudonyme<br/>est déjà pris !</p>");
+		              		unset($_SESSION['erreur']);
+             			}
+             			else if(isset($_SESSION['erreur']) && $_SESSION['erreur'] === 3){ /* Si le mail est déjà utilisé ! */
+		              		echo("<p style='color: red'>L'adresse mail<br/>est déjà prise !</p>");
+		              		unset($_SESSION['erreur']);
+             			}
+             			else if(isset($_SESSION['erreur']) && $_SESSION['erreur'] === 4){ /* Si le mail est déjà utilisé ! */
+		              		echo("<p style='color: red'>Les mots de passe<br/>ne correspondent pas !</p>");
+		              		unset($_SESSION['erreur']);
+             			}
+             			else if(isset($_SESSION['erreur']) && $_SESSION['erreur'] === 7){ /* Si le mail est déjà utilisé ! */
+		              		echo("<p style='color: red'>Le format de l'adresse<br/>mail n'est pas valide !</p>");
+		              		unset($_SESSION['erreur']);
+             			}
+		            ?>
+
 	              </div>
 
 	              <div id="signin--right">
 	                <form method="post" action="hid.inscription.php"> <!-- TODO ! Renvoie vers une page de gestion !-->
 	                  
-	                  <p> <!-- Formulaire inscription -->
+	                  <p>
 	                    <input type="text" name="pseudo"/><br/>
 	                    <input type="password" name="password"/><br/>
 	                    <br/><input  type="password" name="confPassword"/><br/>
@@ -49,13 +73,24 @@
 	                Pseudonyme : <br/>
 	                Mot de passe : <br/>
 	                </p>
+
+	                <?php
+		              if(isset($_SESSION['erreur']) && $_SESSION['erreur'] === 5){
+		              	echo("<p style='color: red'>Veuillez remplir <br/>TOUT les champs !</p>");
+		              	unset($_SESSION['erreur']);
+		              }
+		              else if(isset($_SESSION['erreur']) && $_SESSION['erreur'] === 6){
+		              	echo("<p style='color: red'>Identifiants <br/>incorrects !</p>");
+		              	unset($_SESSION['erreur']);
+		              }
+		            ?>
 	              </div>
 
 	              <!-- Placement du formulaire de connexion !-->
 	              <div id="signin--left">
 	                <form method="post" action="hid.inscription.php"> <!-- Renvoie vers une page de gestion !-->
 	                  
-	                  <p> <!--Formulaire -->
+	                  <p>
 	                    <input type="text" name="pseudo"/><br/>
 	                    <input type="password" name="password"/><br/>
 	                    <input id="signin-valid" type="submit" value="Connexion" /> 
@@ -63,17 +98,12 @@
 	                </form>
 	              </div>
 
-	              
-		<!-- 12/05 Balise de php en cours d'intégration, gestion des erreurs -->
-	            <?php
-	              if(isset($_POST['ERROR'])) 
-	                echo("<h1></h1>"); 
-	            ?>
-
 	            </div>
 	        </div>
-      	    </div>
-	</div>
+	      </div>
+
+
+		</div>
   </body>
 <?php include('footer.php') ?>
 </html>
