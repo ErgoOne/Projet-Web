@@ -1,15 +1,18 @@
 ------------------------------------------------------------
---        Script Postgre BDD Projet_Web
--- Sur Pgadmin : Creer une BD par la suite allez sur Plugins puis psql console => Assurez vous que le prompt vous affiche bien le nom de
--- la BD que vous venez de creer. Tapez par la suite la cmd suivante : \i 'Chemin/vers/Sql_Proj_Script.sql'
--- Si pas d'erreurs uniquement des create table & alter table sur les réponses du serveur c'est ok.
+--        Script Postgre BDD 
+-- ## NOM BD : Projet_Web
+-- ## Utilisateur pour acceder à la BD : web_user - Mot de passe : 123456  (le user est à rajouter dans postgres)
+-- ## Injecter le fichier dans la BD Projet_Web déjà crée : Sur Pgadmin/phppgadmin/consolepsql : Creer une BD par la suite allez sur Plugins puis psql console => 
+-- Assurez vous que le prompt vous affiche bien le nom de la bd
+-- que vous venez de creer. Tapez par la suite la cmd suivante : \i 'Chemin/vers/Sql_Proj_Script.sql'
+-- Si pas d'erreur uniquement des create table alter table sur les réponses du serveur alors GG.
 ------------------------------------------------------------
 
 CREATE TYPE Type_Action_Pirate_Bateau AS ENUM ('PirateAttaquerBateau','PirateDeplacerBateau');
 CREATE TYPE Type_Action_Joueur_Bateau AS ENUM ('ConstruireBateau','DétruireBateau','DeplacerBateau');
 CREATE TYPE Type_Action_Joueur_Partie AS ENUM ('GagnerPartie','RejoindrePartie','CreerPartie');
 CREATE TYPE Clan_Pirate AS ENUM ('Baronet Noir','Barbe Rouge','Calico Jack');
-CREATE TYPE Region AS ENUM ('Amerique du nord','Amerique du sud','Afrique','Asie','Europe de l Est','Europe de l Ouest','Proche et moyen Orient');
+CREATE TYPE Region AS ENUM ('Amerique du nord','Amerique du sud','Afrique','Asie','Europe de l Est','Proche et moyen Orient');
 
 
 ------------------------------------------------------------
@@ -21,7 +24,7 @@ CREATE TABLE Joueurs(
 	MotdePasse       VARCHAR (25) NOT NULL ,
 	Region           REGION NOT NULL ,
 	Date_Inscription DATE  NOT NULL ,
-	Id_Avatar        VARCHAR (25) NOT NULL ,
+	Id_Avatar        INT NOT NULL ,
 	CONSTRAINT prk_constraint_Joueurs PRIMARY KEY (Email)
 );
 
@@ -71,7 +74,7 @@ CREATE TABLE TypeBateaux(
 -- Table: Ports
 ------------------------------------------------------------
 CREATE TABLE Ports(
-	Id_Port     VARCHAR (25) NOT NULL ,
+	Id_Port     SERIAL NOT NULL ,
 	Vie_Port    INT  NOT NULL ,
 	Degats_Port INT  NOT NULL ,
 	PosX_Port   INT  NOT NULL ,
@@ -84,7 +87,7 @@ CREATE TABLE Ports(
 -- Table: Avatar
 ------------------------------------------------------------
 CREATE TABLE Avatar(
-	Id_Avatar     VARCHAR (25) NOT NULL ,
+	Id_Avatar     SERIAL NOT NULL ,
 	Chemin_Avatar VARCHAR (120) NOT NULL ,
 	CONSTRAINT prk_constraint_Avatar PRIMARY KEY (Id_Avatar)
 );
@@ -106,7 +109,7 @@ CREATE TABLE Ouragan(
 -- Table: Trophées
 ------------------------------------------------------------
 CREATE TABLE Trophees(
-	Id_Trophee     INT  NOT NULL ,
+	Id_Trophee     SERIAL  NOT NULL ,
 	Nom_Trophee    VARCHAR (25) NOT NULL ,
 	Chemin_Trophee VARCHAR (120) NOT NULL ,
 	CONSTRAINT prk_constraint_Trophees PRIMARY KEY (Id_Trophee)
@@ -140,7 +143,7 @@ CREATE TABLE TypePartie(
 ------------------------------------------------------------
 CREATE TABLE PossederPorts(
 	Email     VARCHAR (25) NOT NULL ,
-	Id_Port   VARCHAR (25) NOT NULL ,
+	Id_Port   INT NOT NULL ,
 	Id_Partie INT  NOT NULL ,
 	CONSTRAINT prk_constraint_PossederPorts PRIMARY KEY (Email,Id_Port,Id_Partie)
 );
@@ -182,7 +185,7 @@ CREATE TABLE AvoirTrophee(
 -- Table: PossederPortsPirates
 ------------------------------------------------------------
 CREATE TABLE PossederPortsPirates(
-	Id_Port   VARCHAR (25) NOT NULL ,
+	Id_Port   INT NOT NULL ,
 	Id_Partie INT  NOT NULL ,
 	Id_Pirate INT  NOT NULL ,
 	CONSTRAINT prk_constraint_PossederPortsPirates PRIMARY KEY (Id_Port,Id_Partie,Id_Pirate)
@@ -205,7 +208,7 @@ CREATE TABLE PossederBateauxPirates(
 ------------------------------------------------------------
 CREATE TABLE AttaquerPort(
 	DateAttaquerPort DATE  NOT NULL ,
-	Id_Port          VARCHAR (25) NOT NULL ,
+	Id_Port          INT NOT NULL ,
 	Id_Bateau        INT  NOT NULL ,
 	CONSTRAINT prk_constraint_AttaquerPort PRIMARY KEY (Id_Port,Id_Bateau)
 );
@@ -216,7 +219,7 @@ CREATE TABLE AttaquerPort(
 ------------------------------------------------------------
 CREATE TABLE PerdrePort(
 	Email   VARCHAR (25) NOT NULL ,
-	Id_Port VARCHAR (25) NOT NULL ,
+	Id_Port INT NOT NULL ,
 	CONSTRAINT prk_constraint_PerdrePort PRIMARY KEY (Email,Id_Port)
 );
 
@@ -238,7 +241,7 @@ CREATE TABLE ActionPiratesBateaux(
 -- Table: PerdrePiratePort
 ------------------------------------------------------------
 CREATE TABLE PerdrePiratePort(
-	Id_Port   VARCHAR (25) NOT NULL ,
+	Id_Port   INT NOT NULL ,
 	Id_Pirate INT  NOT NULL ,
 	CONSTRAINT prk_constraint_PerdrePiratePort PRIMARY KEY (Id_Port,Id_Pirate)
 );
