@@ -267,6 +267,7 @@ nav ul li:last-child:hover::after{left:32em;width:8em;}
   width: 90%;
   min-height: 420px;
   border-radius: 10px;
+  margin-bottom; 2%;
 }
 
 /*  Div li */
@@ -364,6 +365,7 @@ select{
   width: 90%;
   min-height: 300px;
   border-radius: 10px;
+  margin-bottom: 2%;
 }
 
 #signin-css h2, #signin-css p{
@@ -435,7 +437,7 @@ select{
 /*--------------------------------Tutoriel------------------------------------*/
 
 /* Premier bloc */
-#first-tutoriel-container{
+#tutoriel-container{
   display: inline-block;
   margin-left: 5%;
   background-color: rgba(0, 0, 0, 0.2);
@@ -446,8 +448,9 @@ select{
 }
 
 /* Bloc video du premier bloc*/
-#first-video-tutoriel-container{
+#video-tutoriel-container{
   display: inline-block;
+  vertical-align: 90%;
   margin-top: 2%;
   margin-left: 3%;
   margin-bottom: 2%;
@@ -458,75 +461,7 @@ select{
 }
 
 /* Bloc text du premier bloc */
-#first-text-tutoriel-container{
-  display: inline-block;
-  margin-top: 2%;
-  margin-left: 3%;
-  margin-bottom: 2%;
-  background-color: rgba(0, 0, 0, 0.2);
-  min-height: 300px;
-  width: 50%;
-  border-radius: 10px;
-}
-
-/* Second bloc */
-#second-tutoriel-container{
-  margin-left: 5%;
-  background-color: rgba(0, 0, 0, 0.2);
-  width: 90%;
-  min-height: 300px;
-  border-radius: 10px;
-  margin-bottom: 2%;
-}
-
-/* Bloc texte du second bloc */
-#second-text-tutoriel-container{
-  display: inline-block;
-  margin-top: 2%;
-  margin-left: 3%;
-  margin-bottom: 2%;
-  background-color: rgba(0, 0, 0, 0.2);
-  min-height: 300px;
-  width: 50%;
-  border-radius: 10px;
-}
-
-/* Bloc video du second bloc */
-#second-video-tutoriel-container{
-  display: inline-block;
-  margin-top: 2%;
-  margin-left: 3%;
-  margin-bottom: 2%;
-  background-color: rgba(0, 0, 0, 0.2);
-  min-height: 300px;
-  width: 40%;
-  border-radius: 10px;
-}
-
-/*Troisième bloc */
-#third-tutoriel-container{
-  margin-left: 5%;
-  background-color: rgba(0, 0, 0, 0.2);
-  width: 90%;
-  min-height: 300px;
-  border-radius: 10px;
-  margin-bottom: 2%;
-}
-
-/* Bloc video du troisième bloc */
-#third-video-tutoriel-container{
-  display: inline-block;
-  margin-top: 2%;
-  margin-left: 3%;
-  margin-bottom: 2%;
-  background-color: rgba(0, 0, 0, 0.2);
-  width: 40%;
-  min-height: 300px;
-  border-radius: 10px;
-}
-
-/* Bloc texte du troisième bloc */
-#third-text-tutoriel-container{
+#text-tutoriel-container{
   display: inline-block;
   margin-top: 2%;
   margin-left: 3%;
