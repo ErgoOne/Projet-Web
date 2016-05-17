@@ -1,7 +1,4 @@
 <!-- Sandre : 11/05/2015 -->
-
-<?php session_start() ?>
-
 <!DOCTYPE html>
 <html lang="fr">
   <head>
@@ -13,7 +10,7 @@
   <body>
 		<div id="main-container">
       <a href="accueil.php">
-			     <img id="logo" src="images/Logo.png">
+			     <img id="logo" src="images/Logo_white.png">
       </a>
 			<nav>
         <ul>

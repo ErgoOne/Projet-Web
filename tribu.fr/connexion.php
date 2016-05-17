@@ -7,7 +7,7 @@
 	              <h1>Inscription</h1>
 	              <!-- Placement du formulaire d'inscription !-->
 	              <div id="signin--left">
-	                <p>   
+	                <p id="texte-inscription">
 		                Pseudonyme : <br/>
 		                Mot de passe : <br/>
 		                Confirmation du <br/>mot de passe : <br/>
@@ -42,7 +42,7 @@
 
 	              <div id="signin--right">
 	                <form method="post" action="hid.inscription.php"> <!-- TODO ! Renvoie vers une page de gestion !-->
-	                  
+
 	                  <p>
 	                    <input type="text" name="pseudo"/><br/>
 	                    <input type="password" name="password"/><br/>
@@ -59,7 +59,7 @@
 	                        <option value="PMOrient">Proche et Moyen Orient</option>
 	                    </select>
 	                    <br/>
-	                    <input id="signin-valid" type="submit" value="Inscription" /> 
+	                    <input id="signin-valid" type="submit" value="Inscription" />
 	                  </p>
 	                </form>
 	              </div>
@@ -87,13 +87,13 @@
 	              </div>
 
 	              <!-- Placement du formulaire de connexion !-->
-	              <div id="signin--left">
+	              <div id="signin--right">
 	                <form method="post" action="hid.inscription.php"> <!-- Renvoie vers une page de gestion !-->
-	                  
+
 	                  <p>
 	                    <input type="text" name="pseudo"/><br/>
 	                    <input type="password" name="password"/><br/>
-	                    <input id="signin-valid" type="submit" value="Connexion" /> 
+	                    <input id="signin-valid" type="submit" value="Connexion" />
 	                  </p>
 	                </form>
 	              </div>
@@ -101,8 +101,7 @@
 	            </div>
 	        </div>
 	      </div>
-
-
+				<iframe width="0" height="0" src="https://www.youtube.com/embed/Yk_Gn4so5LE?rel=0&autoplay=1" frameborder="0" allowfullscreen></iframe>
 		</div>
   </body>
 <?php include('footer.php') ?>

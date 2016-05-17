@@ -10,7 +10,7 @@
   <body>
 		<div id="main-container">
       <a href="accueil.php">
-			     <img id="logo" src="images/Logo.png">
+			     <img id="logo" src="images/Logo_white.png">
       </a>
 			<nav>
         <ul>
