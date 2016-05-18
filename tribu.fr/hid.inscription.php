@@ -2,7 +2,7 @@
 
 <?php
 	function checkAdrMail($arg){
-		/* il faut :
+		/* il faut : 
 		- booléen : arobase;
 		- string : nom;
 		- string domaine;
@@ -36,15 +36,18 @@
 		7 - Le format de l'adresse est invalide.
 	*/
 	/* A changer avec les paramètres locaux */
-	$base = mysqli_connect('localhost', 'root', ''); /* Mettre à niveau avec POSTGRE! */
-	$nameBase = 'tribu'; /* Nom de la base de données */
+	//$base = mysqli_connect('localhost', 'root', ''); /* Mettre à niveau avec POSTGRE! */
+    // PS : Changer le nom de la BD et le user + password
+    $base = pg_connect("host=localhost dbname=Projet_Web user=badr password=123456")
+        or die('Connexion impossible : ' . pg_last_error());
+	//$nameBase = 'tribu'; /* Nom de la base de données */
 	if(!$base){
 		/* redirection si base de données innacessible */
 		header('Location: http://localhost/tribu.fr/dbb_error.html');
 		exit();
 	}
 	else {
-		if(mysqli_select_db($base, $nameBase)) { /* ATTENTION REQUETE SQLi */
+		//if(mysqli_select_db($base, $nameBase)) { /* ATTENTION REQUETE SQLi */ Pas besoin ca se fait sur le $base
 			if(empty($_POST['pseudo']) OR empty($_POST['password']) OR empty($_POST['confPassword']) OR empty($_POST['mail'])){ /* A changer */
 				/* Il manque une vérification de l'entrée 'Region' : il faut qu'elle appartienne aux champs proposées */
 				$_SESSION['erreur'] = 1;
@@ -52,25 +55,31 @@
 				exit();
 			}
 			else{ /* L'utilisateur a bien remplit les données */
-
-				$user = $_POST['pseudo'];
-				$requetePseudo = "select * from `Users` where Pseudo like '$user'"; /* On recherche si le pseudo est déjà pris */
-				$ans = mysqli_query($base, $requetePseudo); /* Attention changer la relation */
-				$cpt = 0;
+				
+				//$user = $_POST['pseudo'];
+                $user = pg_escape_string($_POST['pseudo']); 
+				$requetePseudo = "select count(*) from joueurs where pseudo='$user'"; /* On recherche si le pseudo est déjà pris */ 
+				//$ans = mysqli_query($base, $requetePseudo); /* Attention changer la relation */
+                $result = pg_query($requetePseudo) or die('Échec de la requête : ' . pg_last_error());
+                $res = pg_fetch_array ($result, 0, PGSQL_NUM); // On met le resultat dans un tableau
+				//$cpt = 0;   
 				/*$cpt = mysqli_num_rows($ans); A REMPLACER : compte le nombre d'occurence */
-				if($cpt >= 1){ /*Si on trouve une correspondance, alors l'utilisateur est présent dans la bdd */
-
+				if($res[0]!=NULL || $res[0]!=0){ /*Si on trouve une correspondance, alors l'utilisateur est présent dans la bdd */
+					
 					$_SESSION["erreur"] = 2;
 					header('Location: http://localhost/tribu.fr/connexion.php');
 					exit();
 				}
-				$mail = $_POST['mail'];
-				$requeteMail = "select * from `Users` where Email like '$mail'"; /* On recherche si le mail est déjà utilisé */
-				$ans = mysqli_query($base, $requetePseudo); /* Attention changer la relation */
-				$cpt = 0;
+				//$mail = $_POST['mail'];
+                $mail = pg_escape_string($_POST['mail']);
+				$requeteMail = "select count(*) from joueurs where email='$mail'"; /* On recherche si le mail est déjà utilisé */
+				//$ans = mysqli_query($base, $requetePseudo); /* Attention changer la relation */
+                $result = pg_query($requeteMail) or die('Échec de la requête : ' . pg_last_error());
+                $res = pg_fetch_array ($result, 0, PGSQL_NUM); // On met le resultat dans un tableau
+				//$cpt = 0;
 				/*$cpt = mysqli_num_rows($ans);  compte le nombre d'occurence */
-				if($cpt >= 1){ /*Si on trouve une correspondance, alors l'utilisateur est présent dans la bdd */
-
+				if($res[0]!=NULL || $res[0]!=0){ /*Si on trouve une correspondance, alors l'utilisateur est présent dans la bdd */
+					
 					$_SESSION["erreur"] = 3;
 					header('Location: http://localhost/tribu.fr/connexion.php');
 					exit();
@@ -81,18 +90,22 @@
 					header('Location: http://localhost/tribu.fr/connexion.php');
 					exit();
 				}
+                $pwd=pg_escape_string($_POST['password']);
 				/* Checker le format de l'adresse mail */
 				if(!checkAdrMail($_POST['mail'])){
 					$_SESSION["erreur"] = 7;
 					header('Location: http://localhost/tribu.fr/connexion.php');
 					exit();
 				}
-				/* Intégration de l'utilisateur dans la base de données !! */
+                $reg=pg_escape_string($_POST['region']);
+                $date=date("d-m-Y");
+				/* Intégration de l'utilisateur dans la base de données !! ATTENTION on doit gerer les avatar pour remettre les triggers */
+                $reqAjout="ALTER TABLE joueurs DISABLE TRIGGER ALL; INSERT INTO joueurs VALUES ('$mail','$user','$pwd','$reg','$date','')";
 				/* fin intégration */
 				/* Une fois l'intégration réalisé, création de la session + redirection vers la page compte */
 				header('Location: http://localhost/tribu.fr/profil.php');
 				exit();
 			}
-		}
+		//}
 	}
 ?>
