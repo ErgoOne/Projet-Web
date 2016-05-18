@@ -1,4 +1,7 @@
 <!-- Sandre : 11/05/2015 -->
+
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="fr">
   <head>
