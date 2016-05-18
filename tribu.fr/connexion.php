@@ -88,7 +88,7 @@
 
 	              <!-- Placement du formulaire de connexion !-->
 	              <div id="signin--right">
-	                <form method="post" action="hid.inscription.php"> <!-- Renvoie vers une page de gestion !-->
+	                <form method="post" action="hid.connexion.php"> <!-- Renvoie vers une page de gestion !-->
 
 	                  <p>
 	                    <input type="text" name="pseudo"/><br/>
