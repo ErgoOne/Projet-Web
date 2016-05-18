@@ -3,7 +3,7 @@
 <html lang="fr">
   <head>
     <meta charset="utf-8">
-    <title>Tribu - Accueil</title>
+    <title>Tribu - Classement</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="images/favicon.ico"/>
   </head>
