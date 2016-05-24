@@ -26,11 +26,11 @@ body {
 h1{
   font-family: "Caraibes";
   text-align: center;
-  font-size: 40px;
+  font-size: 45px;
   font-style: italic;
   margin: 0;
-  color: white;
-  text-shadow: 1px 1px 0 black;
+  color: brown;
+  text-shadow: 2px 2px 0 white;
 }
 
 p{
@@ -209,11 +209,17 @@ nav ul li:last-child:hover::after{left:32em;width:8em;}
 /*--------------------------------Accueil-------------------------------------*/
 
 #first-accueil-container{
-  margin-left: 5%;
-  background-color: rgba(0, 0, 0, 0.2);
+  margin-left: 3%;
+  margin-right: 3%;
+  background-color: rgba(0, 0, 0, 0.3);
   width: 90%;
   min-height: 200px;
   border-radius: 10px;
+  border-image: url(images/border-main-background.png) 45 round;
+  border-image-outset: 9px;
+  border-width: 27px;
+  background-image: url(images/background-div.jpg);
+  background-position: left;
 }
 
 #video-accueil-container{
@@ -261,9 +267,10 @@ nav ul li:last-child:hover::after{left:32em;width:8em;}
 
 #description-accueil-container{
   margin-top: 3%;
-  margin-left: 5%;
-  /*background-color: rgba(0, 0, 0, 0.2);*/
-  width: 90%;
+  margin-left: 3%;
+  margin-right: 3%;
+  /*background-color: rgba(0, 0, 0, 0.3);*/
+  /*width: 90%;*/
   padding-top: 0%;
   padding-bottom: 1%;
   /*padding-left: 1%;*/
@@ -289,12 +296,18 @@ nav ul li:last-child:hover::after{left:32em;width:8em;}
 #screenshot-accueil-container{
   display: inline-block;
   margin-top: 3%;
-  margin-left: 5%;
-  background-color: rgba(0, 0, 0, 0.2);
+  margin-left: 3%;
+  margin-right: 3%;
+  background-color: rgba(0, 0, 0, 0.3);
   width: 90%;
   min-height: 420px;
   border-radius: 10px;
   margin-bottom: 2%;
+  border-image: url(images/border-main-background.png) 45 round;
+  border-image-outset: 9px;
+  border-width: 27px;
+  background-image: url(images/background-div.jpg);
+  background-position: left;
 }
 
 /*  Div li */
@@ -363,12 +376,18 @@ select{
 
 #signin-frame{
   display: inline-block;
-  margin-left: 5%;
+  margin-left: 3%;
+  margin-right: 3%;
   margin-bottom: 2%;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.3);
   width: 90%;
   /*min-height: 300px;*/
   border-radius: 10px;
+  border-image: url(images/border-main-background.png) 45 round;
+  border-image-outset: 9px;
+  border-width: 27px;
+  background-image: url(images/background-div.jpg);
+  background-position: left;
 }
 
 #signin-valid{
@@ -388,13 +407,13 @@ select{
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100% 100%;
-  min-height: 350px;
+  min-height: 520px;
   border-radius: 5px;
   float: left;
 }
 
 #signin-left h1{
-  margin-top: 5%;
+  margin-top: 10%;
 }
 
 #signin-right{
@@ -414,7 +433,7 @@ select{
 }
 
 #signin-right h1{
-  margin-top: 5%;
+  margin-top: 10%;
 }
 
 
@@ -453,19 +472,39 @@ select{
   margin-left: -20%;
 }
 
+label > input{ /* Cacher le boutton radio */
+  display:none;
+}
+label > input + img{ /* Stylage des images */
+  cursor:pointer;
+  border:2px solid transparent;
+}
+label > input:checked + img{ /* Stylage de l'image checké */
+
+  border-image: url(images/border-main-background.png) 45 round;
+  border-width: 7px;
+  /*border:2px solid #f00;*/
+}
+
 /*---------------------------------Fin----------------------------------------*/
 
 /*--------------------------------Tutoriel------------------------------------*/
 
-/* Premier bloc */
+/* Bloc */
 #tutoriel-container{
   display: inline-block;
-  margin-left: 5%;
-  background-color: rgba(0, 0, 0, 0.2);
+  margin-left: 3%;
+  margin-right: 3%;
+  /*background-color: rgba(0, 0, 0, 0.6);*/
   width: 90%;
-  min-height: 300px;
+  /*min-height: 300px;*/
   border-radius: 10px;
   margin-bottom: 2%;
+  border-image: url(images/border-main-background.png) 45 round;
+  border-image-outset: 9px;
+  border-width: 27px;
+  background-image: url(images/background-div.jpg);
+  background-position: left;
 }
 
 /* Bloc video du premier bloc*/
@@ -510,11 +549,17 @@ select{
 
 #profil-top {
   display: inline-block;
-  margin-left: 5%;
-  background-color: rgba(0, 0, 0, 0.2);
+  margin-left: 3%;
+  margin-right: 3%;
+  /*background-color: rgba(0, 0, 0, 0.2);*/
   width: 90%;
   min-height: 300px;
   border-radius: 5px;
+  background-image: url(images/background-div.jpg);
+  background-position: left;
+  border-image: url(images/border-main-background.png) 45 round;
+  border-image-outset: 9px;
+  border-width: 27px;
 }
 
 #profil-top-left{
@@ -522,10 +567,14 @@ select{
   margin-top: 3%;
   margin-left: 6%;
   margin-bottom: 3%;
-  background-color: rgba(0, 0, 0, 0.2);
+  /*background-color: rgba(0, 0, 0, 0.2);*/
   width: 40%;
   min-height: 300px;
   border-radius: 5px;
+  background-image: url(images/parchemin.gif);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
 }
 
 #profil-top-right{
@@ -533,21 +582,31 @@ select{
   margin-top: 3%;
   margin-left: 5%;
   margin-bottom: 3%;
-  background-color: rgba(0, 0, 0, 0.2);
+  /*background-color: rgba(0, 0, 0, 0.2);*/
   width: 40%;
   min-height: 300px;
   border-radius: 5px;
+  background-image: url(images/parchemin.gif);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
 }
 
 #profil-bottom{
   display: inline-block;
   margin-top: 2%;
-  margin-left: 5%;
+  margin-left: 3%;
+  margin-right: 3%;
   margin-bottom: 2%;
-  background-color: rgba(0, 0, 0, 0.2);
+  /*background-color: rgba(0, 0, 0, 0.2);*/
   width: 90%;
   min-height: 300px;
   border-radius: 5px;
+  background-image: url(images/background-div.jpg);
+  background-position: left;
+  border-image: url(images/border-main-background.png) 45 round;
+  border-image-outset: 9px;
+  border-width: 27px;
 }
 
 #profil-bottom-left{
@@ -555,10 +614,14 @@ select{
   margin-top: 3%;
   margin-left: 6%;
   margin-bottom: 3%;
-  background-color: rgba(0, 0, 0, 0.2);
+  /*background-color: rgba(0, 0, 0, 0.2);*/
   width: 40%;
   min-height: 300px;
   border-radius: 5px;
+  background-image: url(images/parchemin.gif);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
 }
 
 #profil-bottom-right{
@@ -566,10 +629,14 @@ select{
   margin-top: 3%;
   margin-left: 5%;
   margin-bottom: 3%;
-  background-color: rgba(0, 0, 0, 0.2);
+  /*background-color: rgba(0, 0, 0, 0.2);*/
   width: 40%;
   min-height: 300px;
   border-radius: 5px;
+  background-image: url(images/parchemin.gif);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
 }
 
 /*--------------------------------Fin--------------------------------------*/
