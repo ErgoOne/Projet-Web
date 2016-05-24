@@ -38,7 +38,7 @@
 	/* A changer avec les paramètres locaux */
 	//$base = mysqli_connect('localhost', 'root', ''); /* Mettre à niveau avec POSTGRE! */
     // PS : Changer le nom de la BD et le user + password
-    $base = pg_connect("host=localhost dbname=Projet_Web user=badr password=123456")
+    $base = pg_connect("host=localhost dbname=Projet_Web user=web_user password=123456")
         or die('Connexion impossible : ' . pg_last_error());
 	//$nameBase = 'tribu'; /* Nom de la base de données */
 	if(!$base){
@@ -64,13 +64,13 @@
                 $res = pg_fetch_array ($result, 0, PGSQL_NUM); // On met le resultat dans un tableau
 				//$cpt = 0;   
 				/*$cpt = mysqli_num_rows($ans); A REMPLACER : compte le nombre d'occurence */
-				if($res[0]!=NULL || $res[0]!=0){ /*Si on trouve une correspondance, alors l'utilisateur est présent dans la bdd */
+				if($res[0]==1){ /*Si on trouve une correspondance, alors l'utilisateur est présent dans la bdd MODIFIE ALEXIS!*/
 					
 					$_SESSION["erreur"] = 2;
 					header('Location: http://localhost/tribu.fr/connexion.php');
 					exit();
 				}
-				//$mail = $_POST['mail'];
+
                 $mail = pg_escape_string($_POST['mail']);
 				$requeteMail = "select count(*) from joueurs where email='$mail'"; /* On recherche si le mail est déjà utilisé */
 				//$ans = mysqli_query($base, $requetePseudo); /* Attention changer la relation */
@@ -78,7 +78,7 @@
                 $res = pg_fetch_array ($result, 0, PGSQL_NUM); // On met le resultat dans un tableau
 				//$cpt = 0;
 				/*$cpt = mysqli_num_rows($ans);  compte le nombre d'occurence */
-				if($res[0]!=NULL || $res[0]!=0){ /*Si on trouve une correspondance, alors l'utilisateur est présent dans la bdd */
+				if($res[0]==1){ /*Si on trouve une correspondance, alors l'utilisateur est présent dans la bdd MODIF ALEXIS!*/
 					
 					$_SESSION["erreur"] = 3;
 					header('Location: http://localhost/tribu.fr/connexion.php');
@@ -100,9 +100,13 @@
                 $reg=pg_escape_string($_POST['region']);
                 $date=date("d-m-Y");
 				/* Intégration de l'utilisateur dans la base de données !! ATTENTION on doit gerer les avatar pour remettre les triggers */
-                $reqAjout="ALTER TABLE joueurs DISABLE TRIGGER ALL; INSERT INTO joueurs VALUES ('$mail','$user','$pwd','$reg','$date','')";
+                $reqAjout="ALTER TABLE joueurs DISABLE TRIGGER ALL; INSERT INTO joueurs VALUES ('$mail','$user','$pwd','$reg','$date','1')";
 				/* fin intégration */
+
+				$result = pg_query($reqAjout) or die('Échec de la requête : ' . pg_last_error());
+
 				/* Une fois l'intégration réalisé, création de la session + redirection vers la page compte */
+				$_SESSION['pseudo'] == $user;
 				header('Location: http://localhost/tribu.fr/profil.php');
 				exit();
 			}
