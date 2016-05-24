@@ -2,7 +2,7 @@
 		
 			<?php
 				if(!isset($_GET["pseudo"])){ /*Si l'utilisateur n'a pas précisé le pseudo alors il va sur sa page.*/
-					/*$nom = $_SESSION["pseudo"];*/
+					$nom = $_SESSION["pseudo"];
 				}
 				else
 					$nom = $_GET["pseudo"];
