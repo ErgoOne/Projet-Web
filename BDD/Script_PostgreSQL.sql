@@ -9,6 +9,7 @@
 ------------------------------------------------------------
 
 CREATE TYPE Type_Action_Pirate_Bateau AS ENUM ('PirateAttaquerBateau','PirateDeplacerBateau');
+-- Si erreur bizarre : répétez CREATE TYPE Type_Action_Pirate_Bateau AS ENUM ('PirateAttaquerBateau','PirateDeplacerBateau');
 CREATE TYPE Type_Action_Joueur_Bateau AS ENUM ('ConstruireBateau','DétruireBateau','DeplacerBateau');
 CREATE TYPE Type_Action_Joueur_Partie AS ENUM ('GagnerPartie','RejoindrePartie','CreerPartie');
 CREATE TYPE Clan_Pirate AS ENUM ('Baronet Noir','Barbe Rouge','Calico Jack');
