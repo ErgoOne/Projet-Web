@@ -50,13 +50,13 @@
 	                    <input type="text" name="mail"/><br/>
 
 	                    <select name="region">
-	                        <option value="NorthAm">Amérique du Nord</option>
-	                        <option value="SouthAm">Amérique du Sud</option>
-	                        <option value="Africa">Afrique</option>
-	                        <option value="Asia">Asie</option>
-	                        <option value="EstEU">Europe de l'Est</option>
-	                        <option value="WestEU">Europe de l'Ouest</option>
-	                        <option value="PMOrient">Proche et Moyen Orient</option>
+	                        <option value="Amerique du nord">Amérique du Nord</option>
+	                        <option value="Amerique du sud">Amérique du Sud</option>
+	                        <option value="Afrique">Afrique</option>
+	                        <option value="Asie">Asie</option>
+	                        <option value="Europe de l Est">Europe de l'Est</option>
+	                        <option value="Europe de l Ouest">Europe de l'Ouest</option>
+	                        <option value="Proche et moyen Orient">Proche et Moyen Orient</option>
 	                    </select>
 	                    <br/>
 	                    <input id="signin-valid" type="submit" value="Inscription" />
