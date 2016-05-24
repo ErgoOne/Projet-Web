@@ -1,26 +1,47 @@
 <?php include('entete_profil.php'); ?>
 		
 			<?php
-				if(!isset($_GET["pseudo"])){ /*Si l'utilisateur n'a pas précisé le pseudo alors il va sur sa page.*/
-					$nom = $_SESSION["pseudo"];
+
+				$base = pg_connect("host=localhost dbname=Projet_Web user=web_user password=123456")
+		        or die('Connexion impossible : ' . pg_last_error());
+
+				if(!$base){
+					/* redirection si base de données innacessible */
+					header('Location: http://localhost/tribu.fr/dbb_error.html');
+					exit();
 				}
+
+				if(!isset($_GET["pseudo"])) /*Si l'utilisateur n'a pas précisé le pseudo alors il va sur sa page.*/
+					$nom = $_SESSION["pseudo"];
+				
 				else
 					$nom = $_GET["pseudo"];
-			?>
+
+				$requete = "select region, date_inscription, id_avatar from joueurs where pseudo='$nom'"; 
+				
+                $result = pg_query($requete) or die('Échec de la requête : ' . pg_last_error());
+                $res = pg_fetch_array ($result, 0, PGSQL_NUM); 
+
+                $region = $res[0];
+                $date = $res[1];
+
+                $id_avatar = "images/screenshot" . $res[2] . ".jpg";
+
+            ?>
 
 			<div id="profil-top">
 					<!-- Contient photo/DateInscription/Pseudo/Région/Nombre de parties et victoires-->
 					<div id="profil-top-left">
 						<div id="profil-top-left-img">
 							<?php
-								echo("<img height='250px' width='250px' src='images/screenshot3.jpg' alt='' />");
+								echo("<img height='150px' width='150px' src='".$id_avatar."' alt='' />");
 							?>
 							
 						</div>
 
 						<div id="profil-top-left-text">
-							<p> Pseudo<br/>
-								Région<br/>
+							<p> <?php echo($nom); ?><br/>
+								<?php echo($region); ?><br/>
 								Nombre de victoires : X<br/>
 								Nombre de parties : Y<br/></p>
 						</div>
