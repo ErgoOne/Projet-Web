@@ -36,7 +36,7 @@ CREATE TABLE Joueurs(
 CREATE TABLE Partie(
 	Id_Partie  SERIAL NOT NULL ,
 	Id_Ouragan INT  NOT NULL ,
-	Nom_Type   VARCHAR (25) NOT NULL ,
+	Nom_Type   VARCHAR (25),
 	CONSTRAINT prk_constraint_Partie PRIMARY KEY (Id_Partie)
 );
 
