@@ -106,7 +106,8 @@
 				$result = pg_query($reqAjout) or die('Échec de la requête : ' . pg_last_error());
 
 				/* Une fois l'intégration réalisé, création de la session + redirection vers la page compte */
-				$_SESSION['pseudo'] == $user;
+				$_SESSION['pseudo'] = $user;
+				$_SESSION['email'] = $_POST['mail'];
 				header('Location: http://localhost/tribu.fr/profil.php');
 				exit();
 			}
