@@ -256,7 +256,7 @@ CREATE TABLE ActionJoueurPartie(
 	DateActionJoueurPartie DATE  NOT NULL ,
 	Email                  VARCHAR (25) NOT NULL ,
 	Id_Partie              INT  NOT NULL ,
-	CONSTRAINT prk_constraint_ActionJoueurPartie PRIMARY KEY (Email,Id_Partie)
+	CONSTRAINT prk_constraint_ActionJoueurPartie PRIMARY KEY (Email,Id_Partie,TypeActionJoueurPartie)
 );
 
 
