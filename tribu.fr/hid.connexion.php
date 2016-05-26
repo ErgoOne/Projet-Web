@@ -27,7 +27,7 @@
 				$user = pg_escape_string($_POST['pseudo']); 
                 $pwd=pg_escape_string($_POST['password']);
 
-				$requete = "select * from joueurs where pseudo='$user' and motdepasse='$pwd'"; /* Verification pseudo et mot de passe */
+				$requete = "select email from joueurs where pseudo='$user' and motdepasse='$pwd'"; /* Verification pseudo et mot de passe */
 				
                 $result = pg_query($requete) or die('Échec de la requête : ' . pg_last_error());
                 $res = pg_fetch_array ($result, 0, PGSQL_NUM); // On met le resultat dans un tableau
@@ -35,6 +35,7 @@
                 if(pg_num_rows($result)){
                 	/* Une fois l'intégration réalisé, création de la session + redirection vers la page compte */
 					$_SESSION['pseudo'] = $user;
+					$_SESSION['email'] = $res[0];
 					header('Location: http://localhost/tribu.fr/profil.php');
 					exit();
                 }
