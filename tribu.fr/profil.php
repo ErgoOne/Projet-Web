@@ -12,20 +12,35 @@
 				}
 
 				if(!isset($_GET["pseudo"])) /*Si l'utilisateur n'a pas précisé le pseudo alors il va sur sa page.*/
-					$nom = $_SESSION["pseudo"];
+					$nom = $_SESSION['pseudo'];
 				
 				else
 					$nom = $_GET["pseudo"];
 
-				$requete = "select region, date_inscription, id_avatar from joueurs where pseudo='$nom'"; 
-				
+				/* Récupération de la region, la date d'inscription, l'id avater et de l'email depuis la base de données */
+				$requete = "select region, date_inscription, id_avatar, email from joueurs where pseudo='$nom'"; 
                 $result = pg_query($requete) or die('Échec de la requête : ' . pg_last_error());
                 $res = pg_fetch_array ($result, 0, PGSQL_NUM); 
-
+               	
                 $region = $res[0];
                 $date = $res[1];
-
                 $id_avatar = "images/screenshot" . $res[2] . ".jpg";
+                $email = $res[3];
+
+
+                /* On va compter le nombre de victoire du joueur ! */
+                $requete = "select count(*) from actionjoueurpartie where email = '" . $email ."' and typeactionjoueurpartie = 'GagnerPartie'"; /* Création et envoie de la requête ! */
+                $result = pg_query($requete) or die('Échec de la requête : ' . pg_last_error());
+                $res = pg_fetch_array ($result, 0, PGSQL_NUM);
+
+                $nbVictoire = $res[0];
+
+                /* On va compter le nombre de partie du joueur ! */
+                $requete = "select count(*) from actionjoueurpartie where email = '" . $email ."' and typeactionjoueurpartie != 'GagnerPartie'"; /* Création et envoie de la requête ! */
+                $result = pg_query($requete) or die('Échec de la requête : ' . pg_last_error());
+                $res = pg_fetch_array ($result, 0, PGSQL_NUM);
+
+                $nbPartie = $res[0];
 
             ?>
 
@@ -34,29 +49,71 @@
 					<div id="profil-top-left">
 						<div id="profil-top-left-img">
 							<?php
-								echo("<img height='150px' width='150px' src='".$id_avatar."' alt='' />");
+								echo("<img height='200px' width='200px' src='".$id_avatar."' alt='' />");
+								echo("<p>".$date."</p>");
+
+								/* RAJOUTER BOUTON DECONNEXION */
+
+
 							?>
 							
-						</div>
+						</div> 
 
 						<div id="profil-top-left-text">
-							<p> <?php echo($nom); ?><br/>
-								<?php echo($region); ?><br/>
-								Nombre de victoires : X<br/>
-								Nombre de parties : Y<br/></p>
+							<h1 > <?php echo($nom); ?> </h1><br/>
+							<p>	<?php echo($region); ?><br/>
+								<?php echo("Nombre de victoires : " . $nbVictoire); ?><br/>
+								<?php echo("Nombre de parties : " . $nbPartie); ?><br/></p>
 						</div>
 					</div>
 
 					<!-- Contient la liste d'amis -->
 					<div id="profil-top-right">
-						<h2>Liste d'amis</h2>
+						<h1>Liste d'amis</h1>
 
 
-						<!-- Liste affichage dynamique d'amis-->
+						<!-- Affichage de la liste d'amis grâce à un formulaire -->
 						<?php
-							/* Dans cette balise on interrogera la BDD pour demander qui est amis avec l'utilisateur ayant le pseudo $nom */
-							/* Voir si on peut utiliser une liste déroulante */
-						?>
+
+						$cpt = 0;
+
+						/* Compter si l'utilisateur possède des amis */
+						$requete = "select count(*) from etreamis where email_j1 = '" . $email ."' or email_j2 = '" . $email ."'"; /* On recherche si le mail est déjà utilisé */
+                		$result = pg_query($requete) or die('Échec de la requête : ' . pg_last_error());
+                		$res = pg_fetch_array ($result, 0, PGSQL_NUM); // On met le resultat dans un tableau
+
+                		if($res[0] > 0){ /* si il a des amis */
+							$requete = "select * from etreamis where email_j1 = '" . $email ."' or email_j2 = '" . $email ."'"; /* Création et envoie de la requête ! */
+	                		$result = pg_query($requete) or die('Échec de la requête : ' . pg_last_error());
+	                		if($result != NULL )
+	                			$res = pg_fetch_array ($result, $cpt, PGSQL_NUM);
+	                		echo("<form method='get' action='profil.php'><p><select name='pseudo'>");
+
+	                		while($res != null){
+
+	                			if($res[0] != $email)
+	                				$amis = $res[0];
+	                			else
+	                				$amis = $res[1];
+
+								$requete = "select pseudo from joueurs where email = '" . $amis ."'"; /* Création et envoie d'une seconde requête ! */
+								$result2 = pg_query($requete) or die('Échec de la requête : ' . pg_last_error());
+								$res2 = pg_fetch_array ($result2, 0, PGSQL_NUM);
+								$amis = $res2[0];
+
+	            				echo("<option value='".$amis."'>".$amis."</option>");
+
+	            				$cpt++;
+	                			$res = pg_fetch_array ($result, $cpt, PGSQL_NUM);
+	                		}
+
+							echo("</select><input type='submit' value='Valider' /></p></form>");
+							
+							}
+							else
+								echo("<p>Votre liste d'amis est vide !</p>");
+
+							?>						
 					</div>
 			</div>
 
