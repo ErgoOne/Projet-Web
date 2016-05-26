@@ -36,6 +36,9 @@
 		              		echo("<p style='color: red'>Le format de l'adresse<br/>mail n'est pas valide !</p>");
 		              		unset($_SESSION['erreur']);
              			}
+             			else if(isset($_SESSION['erreur']) && $_SESSION['erreur'] === 8){
+		              	echo("<p style='color: red'>Veuillez vous inscrire<br/>avant d'acceder à mon compte.</p>");
+		              	}
 		            ?>
 
 	              </div>
@@ -81,6 +84,10 @@
 		              }
 		              else if(isset($_SESSION['erreur']) && $_SESSION['erreur'] === 6){
 		              	echo("<p style='color: red'>Identifiants <br/>incorrects !</p>");
+		              	unset($_SESSION['erreur']);
+		              }
+		              else if(isset($_SESSION['erreur']) && $_SESSION['erreur'] === 8){
+		              	echo("<p style='color: red'>Veuillez vous connecter<br/>avant d'acceder à mon compte.</p>");
 		              	unset($_SESSION['erreur']);
 		              }
 		            ?>
