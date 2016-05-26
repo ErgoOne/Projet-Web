@@ -1,5 +1,10 @@
 <?php session_start() ?>
 
+<?php
+  unset($_SESSION['pseudo']);
+  unset($_SESSION['email']);
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
   <head>
