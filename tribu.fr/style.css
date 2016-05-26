@@ -562,19 +562,57 @@ label > input:checked + img{ /* Stylage de l'image checké */
   border-width: 27px;
 }
 
+#profil-top p, h1, h2, h3{
+  margin-top: 10%;
+  margin-left: 10%;
+  margin-right: 0%;
+  margin-bottom: 17%;
+}
+
 #profil-top-left{
   display: inline-block;
   margin-top: 3%;
   margin-left: 6%;
   margin-bottom: 3%;
   /*background-color: rgba(0, 0, 0, 0.2);*/
-  width: 40%;
+  width: 55%;
   min-height: 300px;
   border-radius: 5px;
   background-image: url(images/parchemin.gif);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100% 100%;
+  float:left;
+  padding-top: 5%;
+}
+
+#profil-top-left p{
+  margin-top: 5%;
+  margin-left: 0%;
+  margin-right: 0%;
+  margin-bottom: 10%;
+}
+
+
+#profil-top-left-img{
+  display: inline-block;
+  margin-top: 5%;
+  margin-left: 10%;
+  margin-bottom: 3%;
+  width: 40%;
+  border-radius: 5px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  float:left;
+}
+
+#profil-top-left-img img{
+  border-radius: 10px;
+}
+
+#profil-top-left-text{
+  display: inline-block;
 }
 
 #profil-top-right{
@@ -583,13 +621,23 @@ label > input:checked + img{ /* Stylage de l'image checké */
   margin-left: 5%;
   margin-bottom: 3%;
   /*background-color: rgba(0, 0, 0, 0.2);*/
-  width: 40%;
+  width: 30%;
   min-height: 300px;
   border-radius: 5px;
   background-image: url(images/parchemin.gif);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100% 100%;
+}
+
+#profil-top-right h1 {
+  margin-top: 15%;
+}
+
+#profil-top-right form{
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-bottom: 15%;
 }
 
 #profil-bottom{
@@ -609,6 +657,13 @@ label > input:checked + img{ /* Stylage de l'image checké */
   border-width: 27px;
 }
 
+#profil-bottom p{
+  margin-top: 17%;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 17%;
+}
+
 #profil-bottom-left{
   display: inline-block;
   margin-top: 3%;
@@ -622,6 +677,7 @@ label > input:checked + img{ /* Stylage de l'image checké */
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100% 100%;
+  float:left;
 }
 
 #profil-bottom-right{
