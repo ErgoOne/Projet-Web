@@ -1,4 +1,4 @@
-<?php session_start() ?>
+<?php session_start(); ?>
 
 <?php
 	/* Dernière mise à jour : 12 Mai */
@@ -8,15 +8,15 @@
 		6 - Pseudo ou password incorrect
 	*/
 	/* A changer avec les paramètres locaux */
-	$base = mysqli_connect('localhost', 'root', ''); /* Mettre à niveau avec POSTGRE! */
-	$nameBase = 'tribu'; /* Nom de la base de données */
+	$base = pg_connect("host=localhost dbname=Projet_Web user=web_user password=123456")
+        or die('Connexion impossible : ' . pg_last_error());
+
 	if(!$base){
 		/* redirection si base de données innacessible */
 		header('Location: http://localhost/tribu.fr/dbb_error.html');
 		exit();
 	}
 	else {
-		if(mysqli_select_db($base, $nameBase)) { /* ATTENTION REQUETE SQLi */
 			if(empty($_POST['pseudo']) OR empty($_POST['password'])){ /* A changer */
 				$_SESSION['erreur'] = 5;
 				header('Location: http://localhost/tribu.fr/connexion.php');
@@ -24,15 +24,20 @@
 			}
 			else{
 
-				$user = $_POST['nom'];
-				$password = md5($_POST['motDePasse']);
-				$requete = "select * from `Users` where id like '$user' and password like '$password'"; /* Verification pseudo et mot de passe */
-				$ans = mysqli_query($base, $requete); /* Attention changer la relation */
-				$cpt = mysqli_num_rows($ans); /* compte le nombre d'occurence */
-				if($cpt == 1){ /* Si on trouve une correspondance, alors les identifiants sont bons */
+				$user = pg_escape_string($_POST['pseudo']); 
+                $pwd=pg_escape_string($_POST['password']);
 
-					/* Ouverture session */
-				}
+				$requete = "select * from joueurs where pseudo='$user' and motdepasse='$pwd'"; /* Verification pseudo et mot de passe */
+				
+                $result = pg_query($requete) or die('Échec de la requête : ' . pg_last_error());
+                $res = pg_fetch_array ($result, 0, PGSQL_NUM); // On met le resultat dans un tableau
+
+                if(pg_num_rows($result)){
+                	/* Une fois l'intégration réalisé, création de la session + redirection vers la page compte */
+					$_SESSION['pseudo'] = $user;
+					header('Location: http://localhost/tribu.fr/profil.php');
+					exit();
+                }
 				else{
 					$_SESSION['erreur'] = 6;
 					header('Location: http://localhost/tribu.fr/connexion.php');
@@ -40,5 +45,5 @@
 				}
 			}
 		}
-	}
+	
 ?>
