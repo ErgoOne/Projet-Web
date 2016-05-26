@@ -1,5 +1,13 @@
 <?php session_start() ?>
 
+<?php 
+  if(!isset($_SESSION['pseudo'])){
+    $_SESSION['erreur'] = 8;
+    header('Location: http://localhost/tribu.fr/connexion.php');
+    exit();
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
   <head>
