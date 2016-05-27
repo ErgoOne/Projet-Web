@@ -3,8 +3,8 @@
 			<div id="search-bar">
 				<h2>Recherche</h2>
 				<form action="hid.rechercher.php" method="post" id="formulaire">
-					<input class="champ" type="search" placeholder="Entrez un pseudo ici..." name="recherche"/>
-					<input class="bouton" type="submit" value="Rechercher"/>
+					<input type="search" placeholder="Entrez un pseudo ici..." name="recherche"/>
+					<input id="bouton-search" type="submit" value="Rechercher"/>
 				</form>
 				<?php
 				if(isset($_SESSION['erreur']) && $_SESSION['erreur'] === 1){
@@ -113,12 +113,12 @@
 							echo "<td> ".$classement[1][1]."</td>";
 							echo "<td> ".$classement[2][1]."</td>";
 							echo "<td> ".$classement[3][1]."</td>";
-
 							echo "</tr>";
+							echo "</tbody>";
+							echo "</table>";
+							echo "<br><a href="."classement.php"."><input type='submit' value='Revenir au Classement Général'/></a>";
 						}
           ?>
-	        </tbody>
-				</table>
 			</div>
 			<!-- <iframe width="0" height="0" src="https://www.youtube.com/embed/Yk_Gn4so5LE?rel=0&autoplay=1" frameborder="0" allowfullscreen></iframe> -->
 		</div>
