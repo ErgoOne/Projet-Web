@@ -562,12 +562,12 @@ label > input:checked + img{ /* Stylage de l'image checké */
   border-width: 27px;
 }
 
-#profil-top p, h1, h2, h3{
+/*#profil-top p, h1, h2, h3{
   margin-top: 10%;
   margin-left: 10%;
   margin-right: 0%;
   margin-bottom: 17%;
-}
+}*/
 
 #profil-top-left{
   display: inline-block;
@@ -586,12 +586,14 @@ label > input:checked + img{ /* Stylage de l'image checké */
   padding-top: 5%;
 }
 
-#profil-top-left p{
+
+
+/*#profil-top-left p{
   margin-top: 5%;
   margin-left: 0%;
   margin-right: 0%;
   margin-bottom: 10%;
-}
+}*/
 
 
 #profil-top-left-img{
@@ -628,11 +630,12 @@ label > input:checked + img{ /* Stylage de l'image checké */
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100% 100%;
+  padding-top: 5%;
 }
 
-#profil-top-right h1 {
+/*#profil-top-right h1 {
   margin-top: 15%;
-}
+}*/
 
 #profil-top-right form{
   margin-left: 15%;
@@ -657,12 +660,12 @@ label > input:checked + img{ /* Stylage de l'image checké */
   border-width: 27px;
 }
 
-#profil-bottom p{
+/*#profil-bottom p{
   margin-top: 17%;
   margin-left: 10%;
   margin-right: 10%;
   margin-bottom: 17%;
-}
+}*/
 
 #profil-bottom-left{
   display: inline-block;
@@ -696,7 +699,6 @@ label > input:checked + img{ /* Stylage de l'image checké */
 }
 
 /*--------------------------------Fin--------------------------------------*/
-
 
 /*--------------------------------Footer--------------------------------------*/
 
