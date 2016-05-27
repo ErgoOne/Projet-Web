@@ -56,7 +56,7 @@ embed{
     -webkit-border-radius: 20px !important;
     -ms-border-radius: 20px !important;
     -o-border-radius: 20px !important;
-    border-radius: 20px !important;
+    border-radius: 20px !important
 }
 
 #main-container {
@@ -574,10 +574,8 @@ label > input:checked + img{ /* Stylage de l'image checké */
 
 #formulaire{
   margin-top: 3%;
-  margin-left: 20%
+  margin-left: 13%
 }
-
-
 
 #classement-container{
   margin-left: auto;
@@ -592,6 +590,27 @@ label > input:checked + img{ /* Stylage de l'image checké */
   border-width: 27px;
   background-image: url(images/background-div.jpg);
   background-position: left;
+}
+
+#classement-container a{
+  padding-top: 5%;
+  margin-left: 40%;
+}
+
+#bouton-search{
+  font-family: "Ugly";
+  background-color: brown;
+  font-size: 14px;
+  color: white;
+  border-radius: 10px;
+}
+
+#bouton-search:hover{
+  font-family: "Ugly";
+  background-color: white;
+  font-size: 14px;
+  color: brown;
+  border-radius: 10px;
 }
 
 table, th, td{
@@ -721,6 +740,10 @@ td{
   margin-bottom: 15%;
 }
 
+#profil-top-right p{
+  margin-left: 20%;
+}
+
 #profil-bottom{
   display: inline-block;
   margin-top: 2%;
@@ -803,23 +826,20 @@ td{
     color: black;
     margin-top: 0%;
     margin-bottom: 0%;
-
 }
+
 #tableau_partie{
     overflow-y: auto;
     overflow-x: none;
     height: 350px;
-    width: 350%;
+    /*width: 350%;*/
     font-family: "Ugly";
     font-size: 17px;
     color: black;
     margin-top: 0%;
     margin-bottom: 0%;
     margin-left: 20%;
-
 }
-
-
 
 /*--------------------------------Fin--------------------------------------*/
 
