@@ -6,6 +6,15 @@
 					<input class="champ" type="search" placeholder="Entrez un pseudo ici..." name="recherche"/>
 					<input class="bouton" type="submit" value="Rechercher"/>
 				</form>
+				<?php
+				if(isset($_SESSION['erreur']) && $_SESSION['erreur'] === 1){
+					echo("<p style='color: red; text-align:center'>Veuillez renseignez un joueur valide !</p>");
+					unset($_SESSION['erreur']);
+				} else if(isset($_SESSION['erreur']) && $_SESSION['erreur'] === 2){ /* Si le pseudo est déjà pris ! */
+					echo("<p style='color: red; text-align:center'>Veuillez remplir le champ !</p>");
+					unset($_SESSION['erreur']);
+				}
+				?>
 			</div>
 
 			<div id="classement-container">
