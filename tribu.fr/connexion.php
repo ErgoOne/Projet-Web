@@ -13,32 +13,31 @@
 		                Confirmation du <br/>mot de passe : <br/>
 		                Adresse mail : <br/>
 		                Région : <br/>
+										<br>
+										Avatar : <br>
 	                </p>
 
 	                <?php
 		              	if(isset($_SESSION['erreur']) && $_SESSION['erreur'] === 1){ /* Si un des champs n'est pas remplit */
-		              		echo("<p style='color: red'>Veuillez remplir <br/>TOUT les champs !</p>");
+		              		echo("<p style='color: red; text-align:center'>Veuillez remplir <br/>TOUS les champs !</p>");
 		              		unset($_SESSION['erreur']);
 	             	 	}
 	            	  	else if(isset($_SESSION['erreur']) && $_SESSION['erreur'] === 2){ /* Si le pseudo est déjà pris ! */
-		              		echo("<p style='color: red'>Le pseudonyme<br/>est déjà pris !</p>");
+		              		echo("<p style='color: red; text-align:center'>Le pseudonyme<br/>est déjà pris !</p>");
 		              		unset($_SESSION['erreur']);
              			}
              			else if(isset($_SESSION['erreur']) && $_SESSION['erreur'] === 3){ /* Si le mail est déjà utilisé ! */
-		              		echo("<p style='color: red'>L'adresse mail<br/>est déjà prise !</p>");
+		              		echo("<p style='color: red; text-align:center'id='text_error_inscription' style='color: red'>L'adresse mail<br/>est déjà prise !</p>");
 		              		unset($_SESSION['erreur']);
              			}
              			else if(isset($_SESSION['erreur']) && $_SESSION['erreur'] === 4){ /* Si le mail est déjà utilisé ! */
-		              		echo("<p style='color: red'>Les mots de passe<br/>ne correspondent pas !</p>");
+		              		echo("<p style='color: red; text-align:center'id='text_error_inscription' style='color: red'>Les mots de passe<br/>ne correspondent pas !</p>");
 		              		unset($_SESSION['erreur']);
              			}
              			else if(isset($_SESSION['erreur']) && $_SESSION['erreur'] === 7){ /* Si le mail est déjà utilisé ! */
-		              		echo("<p style='color: red'>Le format de l'adresse<br/>mail n'est pas valide !</p>");
+		              		echo("<p style='color: red; text-align:center'>Le format de l'adresse<br/>mail n'est pas valide !</p>");
 		              		unset($_SESSION['erreur']);
              			}
-             			else if(isset($_SESSION['erreur']) && $_SESSION['erreur'] === 8){
-		              	echo("<p style='color: red'>Veuillez vous inscrire<br/>avant d'acceder à mon compte.</p>");
-		              	}
 		            ?>
 
 	              </div>
@@ -53,14 +52,23 @@
 	                    <input type="text" name="mail"/><br/>
 
 	                    <select name="region">
-	                        <option value="Amerique du nord">Amérique du Nord</option>
-	                        <option value="Amerique du sud">Amérique du Sud</option>
-	                        <option value="Afrique">Afrique</option>
-	                        <option value="Asie">Asie</option>
-	                        <option value="Europe de l Est">Europe de l'Est</option>
-	                        <option value="Europe de l Ouest">Europe de l'Ouest</option>
-	                        <option value="Proche et moyen Orient">Proche et Moyen Orient</option>
+	                        <option value="NorthAm">Amérique du Nord</option>
+	                        <option value="SouthAm">Amérique du Sud</option>
+	                        <option value="Africa">Afrique</option>
+	                        <option value="Asia">Asie</option>
+	                        <option value="EstEU">Europe de l'Est</option>
+	                        <option value="WestEU">Europe de l'Ouest</option>
+	                        <option value="PMOrient">Proche et Moyen Orient</option>
 	                    </select>
+											<br><br>
+											<label>
+                            <input type="radio" name="fb" value="small" />
+                            <img src="images/avatar/cap_adh.jpg" alt="Mountain View">
+                      </label>
+                      <label>
+                            <input type="radio" name="fb" value="small" />
+                            <img src="images/avatar/cap_jack.jpg" alt="Mountain View">
+                      </label>
 	                    <br/>
 	                    <input id="signin-valid" type="submit" value="Inscription" />
 	                  </p>
@@ -86,10 +94,6 @@
 		              	echo("<p style='color: red'>Identifiants <br/>incorrects !</p>");
 		              	unset($_SESSION['erreur']);
 		              }
-		              else if(isset($_SESSION['erreur']) && $_SESSION['erreur'] === 8){
-		              	echo("<p style='color: red'>Veuillez vous connecter<br/>avant d'acceder à mon compte.</p>");
-		              	unset($_SESSION['erreur']);
-		              }
 		            ?>
 	              </div>
 
@@ -108,7 +112,7 @@
 	            </div>
 	        </div>
 	      </div>
-				<iframe width="0" height="0" src="https://www.youtube.com/embed/Yk_Gn4so5LE?rel=0&autoplay=1" frameborder="0" allowfullscreen></iframe>
+				<!-- <iframe width="0" height="0" src="https://www.youtube.com/embed/Yk_Gn4so5LE?rel=0&autoplay=1" frameborder="0" allowfullscreen></iframe> -->
 		</div>
   </body>
 <?php include('footer.php') ?>
