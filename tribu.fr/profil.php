@@ -63,7 +63,9 @@
 							<h1 > <?php echo($nom); ?> </h1><br/>
 							<p>	<?php echo($region); ?><br/>
 								<?php echo("Nombre de victoires : " . $nbVictoire); ?><br/>
-								<?php echo("Nombre de parties : " . $nbPartie); ?><br/></p>
+								<?php echo("Nombre de parties : " . $nbPartie); ?><br/>
+							</p>
+							<a href="connexion.php"><input type='submit' value='Déconnexion'/></a>
 						</div>
 					</div>
 
