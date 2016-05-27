@@ -15,7 +15,7 @@
 			<nav>
         <ul>
           <li class="menu_tutoriel"><a href="accueil.php">Accueil</a></li><!--
-          --><li class="menu_tutoriel"><a href="connexion.php">Jouer</a></li><!--
+          --><li class="menu_tutoriel"><a href="choix_salle.php">Jouer</a></li><!--
           --><li class="menu_tutoriel"><a href="tutoriel.php">Tutoriel</a></li><!--
           --><li class="menu_tutoriel"><a href="classement.php">Classement</a></li><!--
           --><li class="menu_tutoriel"><a href="profil.php">Mon Compte</a></li>
