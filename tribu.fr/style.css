@@ -521,7 +521,7 @@ label > input:checked + img{ /* Stylage de l'image checké */
 /* Bloc video du premier bloc*/
 #video-tutoriel-container{
   display: inline-block;
-  vertical-align: 90%;
+  /*vertical-align: 50%;*/
   margin-top: 2%;
   margin-left: 3%;
   margin-bottom: 3%;
@@ -532,7 +532,7 @@ label > input:checked + img{ /* Stylage de l'image checké */
 }
 
 /* Bloc text du premier bloc */
-#text-tutoriel-container{
+#text-right-tutoriel-container{
   display: inline-block;
   margin-top: 2%;
   margin-left: 3%;
@@ -545,9 +545,33 @@ label > input:checked + img{ /* Stylage de l'image checké */
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100% 100%;
+  float: right;
 }
 
-#text-tutoriel-container p{
+#text-right-tutoriel-container p{
+  margin-top: 17%;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 17%;
+}
+
+#text-left-tutoriel-container{
+  display: inline-block;
+  margin-top: 2%;
+  margin-left: 3%;
+  margin-bottom: 3%;
+  /*background-color: rgba(0, 0, 0, 0.2);*/
+  /*min-height: 300px;*/
+  width: 50%;
+  border-radius: 10px;
+  background-image: url(images/parchemin.gif);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  float: left;
+}
+
+#text-left-tutoriel-container p{
   margin-top: 17%;
   margin-left: 10%;
   margin-right: 10%;
