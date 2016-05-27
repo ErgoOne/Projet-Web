@@ -12,10 +12,8 @@
       </div>
       <div id="description-accueil-container">
         <h1>Description</h1>
-        <p>Denique Antiochensis ordinis vertices sub uno elogio iussit occidi ideo efferatus, quod ei celebrari vilitatem intempestivam urgenti, cum inpenderet inopia, gravius rationabili responderunt; et perissent ad unum ni comes orientis tunc Honoratus fixa constantia restitisset.
-        <br><br>Et licet quocumque oculos flexeris feminas adfatim multas spectare cirratas, quibus, si nupsissent, per aetatem ter iam nixus poterat suppetere liberorum, ad usque taedium pedibus pavimenta tergentes iactari volucriter gyris, dum exprimunt innumera simulacra, quae finxere fabulae theatrales.
-        <br><br>Circa hos dies Lollianus primae lanuginis adulescens, Lampadi filius ex praefecto, exploratius causam Maximino spectante, convictus codicem noxiarum artium nondum per aetatem firmato consilio descripsisse, exulque mittendus, ut sperabatur, patris inpulsu provocavit ad principem, et iussus ad eius comitatum duci, de fumo, ut aiunt, in flammam traditus Phalangio Baeticae consulari cecidit funesti carnificis manu.
-        <br><br>Duplexque isdem diebus acciderat malum, quod et Theophilum insontem atrox interceperat casus, et Serenianus dignus exsecratione cunctorum, innoxius, modo non reclamante publico vigore, discessit.</p>
+        <p>Rejoignez l'aventure Tribu dès maintenant. Plongez dans un monde de batailles navales épiques et prenez la barre des navires légendaires du début du XVIIIe siècle dans un jeu en ligne free to play en défiant les marins les plus féroces et aguerris.
+        <br><br>Battez-vous en haute mer dans des combats intenses et stratégiques afin de devenir le meilleur marin du monde. Pour rejoindre l'aventure rien de plus simple, <b>inscrivez-vous gratuitement</b> et en avant moussaillon !</p>
       </div>
       <div id="screenshot-accueil-container">
         <h1>Captures d'écran</h1>
@@ -69,7 +67,7 @@
                   </a>
              </li>
         </ul>
-        <iframe width="0" height="0" src="https://www.youtube.com/embed/QHWAzBZ2hDA?rel=0&autoplay=1" frameborder="0" allowfullscreen></iframe>
+        <!-- <iframe width="0" height="0" src="https://www.youtube.com/embed/QHWAzBZ2hDA?rel=0&autoplay=1" frameborder="0" allowfullscreen></iframe> -->
       </div>
 		</div>
   </body>
