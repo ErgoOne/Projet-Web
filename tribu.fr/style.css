@@ -721,6 +721,50 @@ td{
 
 /*--------------------------------Fin--------------------------------------*/
 
+/*--------------------------------Choix_Salle--------------------------------------*/
+
+
+#choose_frame{
+  margin-left: 3%;
+  margin-right: 3%;
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 90%;
+  min-height: 200px;
+  border-radius: 10px;
+  border-image: url(images/border-main-background.png) 45 round;
+  border-image-outset: 9px;
+  border-width: 27px;
+  background-image: url(images/background-div.jpg);
+  background-position: left;
+}
+
+#absolute_table{
+    position: absolute;
+    overflow: scroll;
+    font-family: "Ugly";
+    font-size: 17px;
+    color: black;
+    margin-top: 0%;
+    margin-bottom: 0%;
+
+}
+#tableau_partie{
+    overflow-y: auto;
+    overflow-x: none;
+    height: 350px;
+    width: 350%;
+    font-family: "Ugly";
+    font-size: 17px;
+    color: black;
+    margin-top: 0%;
+    margin-bottom: 0%;
+    margin-left: 20%;
+
+}
+
+
+
+/*--------------------------------Fin--------------------------------------*/
 
 /*--------------------------------Footer--------------------------------------*/
 
