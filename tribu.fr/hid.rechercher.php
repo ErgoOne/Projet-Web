@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <?php
   if(!empty($_POST['recherche']))
   {
@@ -15,16 +16,18 @@
     $requete = "SELECT pseudo FROM joueurs WHERE pseudo LIKE '$recherche'";
     $result = pg_query($requete) or die ('Echec de la requete');
     $pseudo = pg_fetch_array ($result, 0, PGSQL_NUM);
-    
+
     if($nbre[0]==1)
     {
       header("Location: http://localhost/tribu.fr/classement.php?param=$pseudo[0]");
       exit();
     } else {
+      $_SESSION['erreur'] = 1;
       header('Location: http://localhost/tribu.fr/classement.php');
       exit();
     }
   } else {
+    $_SESSION['erreur'] = 2;
     header('Location: http://localhost/tribu.fr/classement.php');
     exit();
   }
