@@ -33,6 +33,17 @@ h1{
   text-shadow: 2px 2px 0 white;
 }
 
+h2{
+  font-family: "Caraibes";
+  text-align: center;
+  font-size: 30px;
+  font-style: italic;
+  margin: 0;
+  padding: 0;
+  color: brown;
+  text-shadow: 2px 2px 0 white;
+}
+
 p{
   font-family: "Ugly";
   font-size: 17px;
@@ -545,6 +556,73 @@ label > input:checked + img{ /* Stylage de l'image checké */
 
 /*---------------------------------Fin----------------------------------------*/
 
+/*------------------------------Classement------------------------------------*/
+#search-bar{
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2%;
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 30%;
+  /*min-height:300px;*/
+  border-radius: 10px;
+  border-image: url(images/border-main-background.png) 45 round;
+  border-image-outset: 9px;
+  border-width: 27px;
+  background-image: url(images/background-div.jpg);
+  background-position: left;
+}
+
+#formulaire{
+  margin-top: 3%;
+  margin-left: 20%
+}
+
+
+
+#classement-container{
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2%;
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 90%;
+  /*min-height:300px;*/
+  border-radius: 10px;
+  border-image: url(images/border-main-background.png) 45 round;
+  border-image-outset: 9px;
+  border-width: 27px;
+  background-image: url(images/background-div.jpg);
+  background-position: left;
+}
+
+table, th, td{
+  margin-top: 1%;
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 200px;
+  text-align: center;
+  border: 2px solid brown;
+  border-collapse: collapse;
+  background-color: white;
+}
+
+th{
+  font-family: "Ugly";
+  padding-bottom: 1%;
+  font-size: 20px;
+  color: white;
+  text-shadow: 2px 2px black;
+  background: linear-gradient(to right, rgba(165, 42, 42, 0.5), rgba(165, 42, 42, 1), rgba(165, 42, 42, 0.5));
+}
+
+td{
+  font-family: "Ugly";
+  font-size: 17px;
+  color: black;
+  padding-bottom: 1%;
+}
+
+/*---------------------------------Fin----------------------------------------*/
+
 /*--------------------------------Profil--------------------------------------*/
 
 #profil-top {
@@ -562,59 +640,20 @@ label > input:checked + img{ /* Stylage de l'image checké */
   border-width: 27px;
 }
 
-/*#profil-top p, h1, h2, h3{
-  margin-top: 10%;
-  margin-left: 10%;
-  margin-right: 0%;
-  margin-bottom: 17%;
-}*/
-
 #profil-top-left{
   display: inline-block;
   margin-top: 3%;
   margin-left: 6%;
   margin-bottom: 3%;
   /*background-color: rgba(0, 0, 0, 0.2);*/
-  width: 55%;
+  width: 40%;
   min-height: 300px;
   border-radius: 5px;
   background-image: url(images/parchemin.gif);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100% 100%;
-  float:left;
-  padding-top: 5%;
-}
-
-
-
-/*#profil-top-left p{
-  margin-top: 5%;
-  margin-left: 0%;
-  margin-right: 0%;
-  margin-bottom: 10%;
-}*/
-
-
-#profil-top-left-img{
-  display: inline-block;
-  margin-top: 5%;
-  margin-left: 10%;
-  margin-bottom: 3%;
-  width: 40%;
-  border-radius: 5px;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100% 100%;
-  float:left;
-}
-
-#profil-top-left-img img{
-  border-radius: 10px;
-}
-
-#profil-top-left-text{
-  display: inline-block;
+  float: left;
 }
 
 #profil-top-right{
@@ -623,24 +662,13 @@ label > input:checked + img{ /* Stylage de l'image checké */
   margin-left: 5%;
   margin-bottom: 3%;
   /*background-color: rgba(0, 0, 0, 0.2);*/
-  width: 30%;
+  width: 40%;
   min-height: 300px;
   border-radius: 5px;
   background-image: url(images/parchemin.gif);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100% 100%;
-  padding-top: 5%;
-}
-
-/*#profil-top-right h1 {
-  margin-top: 15%;
-}*/
-
-#profil-top-right form{
-  margin-left: 15%;
-  margin-right: 15%;
-  margin-bottom: 15%;
 }
 
 #profil-bottom{
@@ -660,13 +688,6 @@ label > input:checked + img{ /* Stylage de l'image checké */
   border-width: 27px;
 }
 
-/*#profil-bottom p{
-  margin-top: 17%;
-  margin-left: 10%;
-  margin-right: 10%;
-  margin-bottom: 17%;
-}*/
-
 #profil-bottom-left{
   display: inline-block;
   margin-top: 3%;
@@ -680,7 +701,7 @@ label > input:checked + img{ /* Stylage de l'image checké */
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100% 100%;
-  float:left;
+  float: left;
 }
 
 #profil-bottom-right{
@@ -699,6 +720,7 @@ label > input:checked + img{ /* Stylage de l'image checké */
 }
 
 /*--------------------------------Fin--------------------------------------*/
+
 
 /*--------------------------------Footer--------------------------------------*/
 
