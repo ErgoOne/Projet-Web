@@ -5,7 +5,7 @@
     $base = pg_connect("host=localhost dbname=projet_web user=web_user password=123456")
       or die('Connexion impossible : ' . pg_last_error());
     if(!$base){
-      header('Location: http://localhost/tribu.fr/dbb_error.html');
+      header('Location: ./dbb_error.html');
       exit();
     }
     $recherche = ($_POST['recherche']);
@@ -19,16 +19,16 @@
 
     if($nbre[0]==1)
     {
-      header("Location: http://localhost/tribu.fr/classement.php?param=$pseudo[0]");
+      header("Location: ./classement.php?param=$pseudo[0]");
       exit();
     } else {
       $_SESSION['erreur'] = 1;
-      header('Location: http://localhost/tribu.fr/classement.php');
+      header('Location: ./classement.php');
       exit();
     }
   } else {
     $_SESSION['erreur'] = 2;
-    header('Location: http://localhost/tribu.fr/classement.php');
+    header('Location: ./classement.php');
     exit();
   }
 ?>

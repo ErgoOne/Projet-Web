@@ -22,7 +22,7 @@
 	$reqAjout="ALTER TABLE actionjoueurpartie DISABLE TRIGGER ALL; INSERT INTO actionjoueurpartie VALUES ('CreerPartie', '". $date ."', '". $email ."', '". $res[0] ."')";
 	$result = pg_query($reqAjout) or die('Échec de la requête : ' . pg_last_error());
 
-	header("Location: http://localhost/tribu.fr/choix_salle.php");
+	header("Location: ./choix_salle.php");
 	exit();
 
 ?>

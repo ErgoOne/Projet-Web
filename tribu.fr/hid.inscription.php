@@ -43,7 +43,7 @@
 	//$nameBase = 'tribu'; /* Nom de la base de données */
 	if(!$base){
 		/* redirection si base de données innacessible */
-		header('Location: http://localhost/tribu.fr/dbb_error.html');
+		header('Location: ./dbb_error.html');
 		exit();
 	}
 	else {
@@ -51,7 +51,7 @@
 			if(empty($_POST['pseudo']) OR empty($_POST['password']) OR empty($_POST['confPassword']) OR empty($_POST['mail'])){ /* A changer */
 				/* Il manque une vérification de l'entrée 'Region' : il faut qu'elle appartienne aux champs proposées */
 				$_SESSION['erreur'] = 1;
-				header('Location: http://localhost/tribu.fr/connexion.php');
+				header('Location: ./connexion.php');
 				exit();
 			}
 			else{ /* L'utilisateur a bien remplit les données */
@@ -67,7 +67,7 @@
 				if($res[0]==1){ /*Si on trouve une correspondance, alors l'utilisateur est présent dans la bdd MODIFIE ALEXIS!*/
 					
 					$_SESSION["erreur"] = 2;
-					header('Location: http://localhost/tribu.fr/connexion.php');
+					header('Location: ./connexion.php');
 					exit();
 				}
 
@@ -81,20 +81,20 @@
 				if($res[0]==1){ /*Si on trouve une correspondance, alors l'utilisateur est présent dans la bdd MODIF ALEXIS!*/
 					
 					$_SESSION["erreur"] = 3;
-					header('Location: http://localhost/tribu.fr/connexion.php');
+					header('Location: ./connexion.php');
 					exit();
 				}
 				/* Verifier mot de passe sont les mêmes */
 				if($_POST['password'] !== $_POST['confPassword']){
 					$_SESSION["erreur"] = 4;
-					header('Location: http://localhost/tribu.fr/connexion.php');
+					header('Location: ./connexion.php');
 					exit();
 				}
                 $pwd=pg_escape_string($_POST['password']);
 				/* Checker le format de l'adresse mail */
 				if(!checkAdrMail($_POST['mail'])){
 					$_SESSION["erreur"] = 7;
-					header('Location: http://localhost/tribu.fr/connexion.php');
+					header('Location: ./connexion.php');
 					exit();
 				}
                 $reg=pg_escape_string($_POST['region']);
@@ -108,7 +108,7 @@
 				/* Une fois l'intégration réalisé, création de la session + redirection vers la page compte */
 				$_SESSION['pseudo'] = $user;
 				$_SESSION['email'] = $_POST['mail'];
-				header('Location: http://localhost/tribu.fr/profil.php');
+				header('Location: ./profil.php');
 				exit();
 			}
 		//}

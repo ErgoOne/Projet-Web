@@ -30,7 +30,7 @@
 	}
 	else { 
 		/* La partie étant déjà pleine, on retourne vers le choix de la salle */
-		header("Location: http://localhost/tribu.fr/choix_salle.php");
+		header("Location: ./choix_salle.php");
 		exit();
 	}
 ?>

@@ -13,13 +13,13 @@
 
 	if(!$base){
 		/* redirection si base de données innacessible */
-		header('Location: http://localhost/tribu.fr/dbb_error.html');
+		header('Location: ./dbb_error.html');
 		exit();
 	}
 	else {
 			if(empty($_POST['pseudo']) OR empty($_POST['password'])){ /* A changer */
 				$_SESSION['erreur'] = 5;
-				header('Location: http://localhost/tribu.fr/connexion.php');
+				header('Location: ./connexion.php');
 				exit();
 			}
 			else{
@@ -36,12 +36,12 @@
                 	/* Une fois l'intégration réalisé, création de la session + redirection vers la page compte */
 					$_SESSION['pseudo'] = $user;
 					$_SESSION['email'] = $res[0];
-					header('Location: http://localhost/tribu.fr/profil.php');
+					header('Location: ./profil.php');
 					exit();
                 }
 				else{
 					$_SESSION['erreur'] = 6;
-					header('Location: http://localhost/tribu.fr/connexion.php');
+					header('Location: ./connexion.php');
 					exit();
 				}
 			}
