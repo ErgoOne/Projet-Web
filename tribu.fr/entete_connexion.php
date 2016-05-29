@@ -17,15 +17,15 @@
   </head>
   <body>
 		<div id="main-container">
-      <a href="accueil.php">
+      <a href="/tribu.fr/accueil.php">
 			     <img id="logo" src="images/Logo_white.png">
       </a>
 			<nav>
         <ul>
-          <li class="menu_jouer"><a href="accueil.php">Accueil</a></li><!--
-          --><li class="menu_jouer"><a href="choix_salle.php">Jouer</a></li><!--
-          --><li class="menu_jouer"><a href="tutoriel.php">Tutoriel</a></li><!--
-          --><li class="menu_jouer"><a href="classement.php">Classement</a></li><!--
-          --><li class="menu_jouer"><a href="profil.php">Mon Compte</a></li>
+          <li class="menu_jouer"><a href="/tribu.fr/accueil.php">Accueil</a></li><!--
+          --><li class="menu_jouer"><a href="/tribu.fr/choix_salle.php">Jouer</a></li><!--
+          --><li class="menu_jouer"><a href="/tribu.fr/tutoriel.php">Tutoriel</a></li><!--
+          --><li class="menu_jouer"><a href="/tribu.fr/classement.php">Classement</a></li><!--
+          --><li class="menu_jouer"><a href="/tribu.fr/profil.php">Mon Compte</a></li>
         </ul>
 			</nav>
