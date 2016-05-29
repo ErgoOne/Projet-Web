@@ -26,7 +26,7 @@
 		$result = pg_query($reqAjout) or die('Échec de la requête : ' . pg_last_error());
 	
 		/* Ajouter la redirection vers la page de jeu */ 
-
+		header("Location: ./choix_salle.php");
 	}
 	else { 
 		/* La partie étant déjà pleine, on retourne vers le choix de la salle */

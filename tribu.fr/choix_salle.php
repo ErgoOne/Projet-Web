@@ -38,13 +38,15 @@
 				/*$requete = "select id_partie from actionjoueurpartie where typeactionjoueurpartie == 'CreerPartie' INNER JOIN actionjoueurpartie
 				where ON table1.column_name=table2.column_name;";  on récupère les données des joueurs */
 
-				$requete = "select id_partie from actionjoueurpartie where id_partie not in (select id_partie from actionjoueurpartie where typeactionjoueurpartie='RejoindrePartie' or typeactionjoueurpartie = 'GagnerPartie')";
-
-				$result = pg_query($requete) or die('Échec de la requête : ' . pg_last_error());
-				$res = pg_fetch_array ($result, 0, PGSQL_NUM);
-				$i = 0;
+				
 				 
 				if($total){
+					$requete = "select id_partie from actionjoueurpartie where id_partie not in (select id_partie from actionjoueurpartie where typeactionjoueurpartie='RejoindrePartie' or typeactionjoueurpartie = 'GagnerPartie')";
+
+					$result = pg_query($requete) or die('Échec de la requête : ' . pg_last_error());
+					$res = pg_fetch_array ($result, 0, PGSQL_NUM);
+					$i = 0;
+					
 					echo '<table bgcolor = black>';
 						echo '<thead>';
 							echo '<tr>';

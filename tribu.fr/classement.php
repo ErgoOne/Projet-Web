@@ -33,10 +33,10 @@
 					<tr>
 	        <?php
 						if(empty($_GET['param'])){
-							$base = pg_connect("host=localhost dbname=projet_web user=web_user password=123456")
+							$base = pg_connect("host=localhost dbname=Projet_Web user=web_user password=123456")
 								or die('Connexion impossible : ' . pg_last_error());
 							if(!$base){
-								header('Location: http://localhost/tribu.fr/dbb_error.html');
+								header('Location: ./dbb_error.html');
 								exit();
 							}
 							$requetePseudo = "select count(*) from joueurs";
@@ -44,8 +44,8 @@
 							$total = pg_fetch_array ($resultPseudo, 0, PGSQL_NUM);
 							$cpt = 0;
 
-							$classement[4][$total] = array();
-							$aide_class[$total] = array();
+							$classement[4][$total[0]] = array();
+							$aide_class[$total[0]] = array();
 
 							while($cpt < $total[0]){
 								$requetePseudo = "select pseudo, email from joueurs";
@@ -75,15 +75,17 @@
 							arsort($aide_class);
 
 							foreach ($aide_class as $key => $val) {
-								echo "<td> ".$classement[0][$key]."</td>";
-								echo "<td> ".$classement[1][$key]."</td>";
-								echo "<td> ".$classement[2][$key]."</td>";
-								echo "<td> ".$classement[3][$key]."</td>";
+								if($key != $total[0]){
+									echo "<td> ". $classement[0][$key] ."</td>";
+									echo "<td> ". $classement[1][$key] ."</td>";
+									echo "<td> ". $classement[2][$key] ."</td>";
+									echo "<td> ". $classement[3][$key] ."</td>";
 
-								echo "</tr>";
+									echo "</tr>";
+								}
 							}
 						} else {
-							$base = pg_connect("host=localhost dbname=projet_web user=web_user password=123456")
+							$base = pg_connect("host=localhost dbname=Projet_Web user=web_user password=123456")
 								or die('Connexion impossible : ' . pg_last_error());
 							if(!$base){
 								header('Location: http://localhost/tribu.fr/dbb_error.html');

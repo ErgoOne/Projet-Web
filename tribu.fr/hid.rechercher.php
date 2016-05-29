@@ -2,7 +2,7 @@
 <?php
   if(!empty($_POST['recherche']))
   {
-    $base = pg_connect("host=localhost dbname=projet_web user=web_user password=123456")
+    $base = pg_connect("host=localhost dbname=Projet_Web user=web_user password=123456")
       or die('Connexion impossible : ' . pg_last_error());
     if(!$base){
       header('Location: ./dbb_error.html');
