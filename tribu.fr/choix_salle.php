@@ -1,4 +1,4 @@
-<?php 
+<?php
 	function go_partie($id_partie){
 		header("Location: ./accueil.php");
 		exit();
@@ -38,8 +38,8 @@
 				/*$requete = "select id_partie from actionjoueurpartie where typeactionjoueurpartie == 'CreerPartie' INNER JOIN actionjoueurpartie
 				where ON table1.column_name=table2.column_name;";  on récupère les données des joueurs */
 
-				
-				 
+
+
 				if($total){
 					$requete = "select id_partie from actionjoueurpartie where id_partie not in (select id_partie from actionjoueurpartie where typeactionjoueurpartie='RejoindrePartie' or typeactionjoueurpartie = 'GagnerPartie')";
 
@@ -54,7 +54,7 @@
 						$res = pg_fetch_array ($result, $i, PGSQL_NUM); /* On passe à la prochaine partie */
 
 						/* On vérifie que la partie n'a pas déjà été remplie par deux joueurs */
-						
+
 						/* On va aller chercher le nom du joueur ayant créé la partie et la date de la partie */
 						/* On va donc aller chercher dans la table actionjoueurpartie l'email et la date */
 						/* Or la actionjoueurpartie a un id unique composé du type, de l'email et de l'id partie */
@@ -65,7 +65,7 @@
 						$email = $resED[0];
 						$date = $resED[1];
 
-						$requete = "select pseudo from joueurs where email = '" . $resED[0] ."'"; 
+						$requete = "select pseudo from joueurs where email = '" . $resED[0] ."'";
 						$resultJ = pg_query($requete) or die('Échec de la requête : ' . pg_last_error());
 						$resJ = pg_fetch_array ($resultJ, 0, PGSQL_NUM);
 
@@ -75,7 +75,7 @@
 								echo '<td bgcolor="#EFEFEF">'.$resJ[0].'</td>'; /* Nom du créateur */
 								echo '<td bgcolor="#EFEFEF">'.$date.'</td>'; /* date */
 
-								echo "<td bgcolor='#EFEFEF'><form method='post' action='hid.rejoindrejeu.php'>Aller à la <input name='Rejoindre' type='submit' value=". $res[0] ." /></form></td>"; /* rejoindre */
+								echo "<td bgcolor='#EFEFEF'><form method='post' action='hid.rejoindrejeu.php'>Aller à la <input id='bouton-search' name='Rejoindre' type='submit' value=". $res[0] ." /></form></td>"; /* rejoindre */
 							echo '</tr>'."\n";
 						$i++;
 
@@ -84,16 +84,14 @@
 					echo '</table>'."\n";
 
 				}
-				else echo 'Pas d\'enregistrements dans cette table...'; 
+				else echo "<br><br><br><br><br><h2>Aucune salle en attente...</h2>";
 			?>
 		</div>
 
-		<a href="hid.creerjeu.php"><h1>Créer une partie !</h1></a>
+		<a href="hid.creerjeu.php" style="text-decoration: none;"><h1 id="create-partie">Créer une partie !</h1></a>
 
-		<iframe width="0" height="0" src="https://www.youtube.com/embed/Yk_Gn4so5LE?rel=0&autoplay=1" frameborder="0" allowfullscreen></iframe>
+		<!-- <iframe width="0" height="0" src="https://www.youtube.com/embed/Yk_Gn4so5LE?rel=0&autoplay=1" frameborder="0" allowfullscreen></iframe> -->
 	</div>
 </body>
 <?php include('footer.php') ?>
 </html>
-
-

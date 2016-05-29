@@ -616,25 +616,43 @@ label > input:checked + img{ /* Stylage de l'image checké */
   background-position: left;
 }
 
-#classement-container a{
+#lien-compte-classement{
   padding-top: 5%;
-  margin-left: 41%;
+  text-decoration: none;
+  text-align: center;
+  color: black;
+}
+
+#lien-compte-classement:hover{
+  color: brown;
+  font-size: 18px;
+}
+
+#return-classement{
+  font-family: "Ugly";
+  background-color: brown;
+  font-size: 15px;
+  color: white;
+  border-radius: 10px;
+  margin-left: 40%;
+}
+
+#return-classement:hover{
+  background-color: white;
+  color: brown;
 }
 
 #bouton-search{
   font-family: "Ugly";
   background-color: brown;
-  font-size: 14px;
+  font-size: 15px;
   color: white;
   border-radius: 10px;
 }
 
 #bouton-search:hover{
-  font-family: "Ugly";
   background-color: white;
-  font-size: 14px;
   color: brown;
-  border-radius: 10px;
 }
 
 table, th, td{
@@ -683,13 +701,6 @@ td{
   border-width: 27px;
 }
 
-/*#profil-top p, h1, h2, h3{
-  margin-top: 10%;
-  margin-left: 10%;
-  margin-right: 0%;
-  margin-bottom: 17%;
-}*/
-
 #profil-top-left{
   display: inline-block;
   margin-top: 3%;
@@ -706,16 +717,6 @@ td{
   float:left;
   padding-top: 5%;
 }
-
-
-
-/*#profil-top-left p{
-  margin-top: 5%;
-  margin-left: 0%;
-  margin-right: 0%;
-  margin-bottom: 10%;
-}*/
-
 
 #profil-top-left-img{
   display: inline-block;
@@ -754,10 +755,6 @@ td{
   padding-top: 5%;
 }
 
-/*#profil-top-right h1 {
-  margin-top: 15%;
-}*/
-
 #profil-top-right form{
   margin-left: 15%;
   margin-right: 15%;
@@ -785,13 +782,6 @@ td{
   border-width: 27px;
 }
 
-/*#profil-bottom p{
-  margin-top: 17%;
-  margin-left: 10%;
-  margin-right: 10%;
-  margin-bottom: 17%;
-}*/
-
 #profil-bottom-left{
   display: inline-block;
   margin-top: 3%;
@@ -799,13 +789,14 @@ td{
   margin-bottom: 3%;
   /*background-color: rgba(0, 0, 0, 0.2);*/
   width: 40%;
-  min-height: 300px;
+  min-height: 400px;
   border-radius: 5px;
   background-image: url(images/parchemin.gif);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100% 100%;
   float:left;
+  padding-top: 8%;
 }
 
 #profil-bottom-right{
@@ -815,12 +806,18 @@ td{
   margin-bottom: 3%;
   /*background-color: rgba(0, 0, 0, 0.2);*/
   width: 40%;
-  min-height: 300px;
+  min-height: 400px;
   border-radius: 5px;
   background-image: url(images/parchemin.gif);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100% 100%;
+  padding-top: 8%;
+}
+
+#img-stat{
+  margin-left: 27%;
+  margin-top: 5%;
 }
 
 /*--------------------------------Fin--------------------------------------*/
@@ -861,8 +858,26 @@ td{
     font-size: 17px;
     color: black;
     margin-top: 0%;
-    margin-bottom: 0%;
-    margin-left: 20%;
+    margin-bottom: 2%;
+    margin-left: 0%;
+}
+
+#create-partie{
+  border: 4px solid brown;
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+}
+
+#create-partie:hover{
+  background-color: brown;
+  color: white;
+  text-shadow: 2px 2px black;
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
 }
 
 /*--------------------------------Fin--------------------------------------*/

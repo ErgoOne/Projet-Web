@@ -52,25 +52,30 @@
 	                    <input type="text" name="mail"/><br/>
 
 	                    <select name="region">
-	                        <option value="NorthAm">Amérique du Nord</option>
-	                        <option value="SouthAm">Amérique du Sud</option>
-	                        <option value="Africa">Afrique</option>
-	                        <option value="Asia">Asie</option>
-	                        <option value="EstEU">Europe de l'Est</option>
-	                        <option value="WestEU">Europe de l'Ouest</option>
-	                        <option value="PMOrient">Proche et Moyen Orient</option>
+	                        <option value="Amerique du nord">Amérique du Nord</option>
+	                        <option value="Amerique du sud">Amérique du Sud</option>
+	                        <option value="Afrique">Afrique</option>
+	                        <option value="Asie">Asie</option>
+	                        <option value="Europe de l Est">Europe de l'Est</option>
+	                        <option value="Europe de l Ouest">Europe de l'Ouest</option>
+	                        <option value="Proche et moyen Orient">Proche et Moyen Orient</option>
+
 	                    </select>
 											<br><br>
-											<label>
-                            <input type="radio" name="fb" value="small" />
-                            <img src="images/avatar/cap_adh.jpg" alt="Mountain View">
+				      <label>
+                            <input type="radio" name="avatar" value="1" />
+                            <img height='60px' width='60px' src="images/avatar/1.jpg" alt='Avatar'/>
                       </label>
                       <label>
-                            <input type="radio" name="fb" value="small" />
-                            <img src="images/avatar/cap_jack.jpg" alt="Mountain View">
+                            <input type="radio" name="avatar" value="2" />
+                            <img height='60px' width='60px' src="images/avatar/2.jpg" alt='Avatar'/>
+                      </label>
+                      <label>
+                            <input type="radio" name="avatar" value="3" />
+                            <img height='60px' width='60px' src="images/avatar/3.jpg" alt='Avatar'/>
                       </label>
 	                    <br/>
-	                    <input id="signin-valid" type="submit" value="Inscription" />
+	                    <input id="bouton-search" type="submit" value="Inscription" />
 	                  </p>
 	                </form>
 	              </div>
@@ -104,7 +109,7 @@
 	                  <p>
 	                    <input type="text" name="pseudo"/><br/>
 	                    <input type="password" name="password"/><br/>
-	                    <input id="signin-valid" type="submit" value="Connexion" />
+	                    <input id="bouton-search" type="submit" value="Connexion" />
 	                  </p>
 	                </form>
 	              </div>

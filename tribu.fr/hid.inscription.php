@@ -48,7 +48,7 @@
 	}
 	else {
 		//if(mysqli_select_db($base, $nameBase)) { /* ATTENTION REQUETE SQLi */ Pas besoin ca se fait sur le $base
-			if(empty($_POST['pseudo']) OR empty($_POST['password']) OR empty($_POST['confPassword']) OR empty($_POST['mail'])){ /* A changer */
+			if(empty($_POST['pseudo']) OR empty($_POST['password']) OR empty($_POST['confPassword']) OR empty($_POST['mail']) OR empty($_POST['avatar'])){ /* A changer */
 				/* Il manque une vérification de l'entrée 'Region' : il faut qu'elle appartienne aux champs proposées */
 				$_SESSION['erreur'] = 1;
 				header('Location: ./connexion.php');
@@ -99,8 +99,10 @@
 				}
                 $reg=pg_escape_string($_POST['region']);
                 $date=date("d-m-Y");
+               
+                $ava=pg_escape_string($_POST['avatar']);
 				/* Intégration de l'utilisateur dans la base de données !! ATTENTION on doit gerer les avatar pour remettre les triggers */
-                $reqAjout="ALTER TABLE joueurs DISABLE TRIGGER ALL; INSERT INTO joueurs VALUES ('$mail','$user','$pwd','$reg','$date','1')";
+                $reqAjout="INSERT INTO joueurs VALUES ('$mail','$user','$pwd','$reg','$date','$ava')";
 				/* fin intégration */
 
 				$result = pg_query($reqAjout) or die('Échec de la requête : ' . pg_last_error());

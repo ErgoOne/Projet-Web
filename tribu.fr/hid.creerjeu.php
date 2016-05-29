@@ -14,15 +14,14 @@
 
 	/* création des variables */
     $res = pg_fetch_array ($result, 0, PGSQL_NUM); /* id_partie */
+    $_SESSION['id_partie'] = $res[0];
     $date = date("d-m-Y"); /* date */
     $email = $_SESSION['email'];
-
-
 
 	$reqAjout="ALTER TABLE actionjoueurpartie DISABLE TRIGGER ALL; INSERT INTO actionjoueurpartie VALUES ('CreerPartie', '". $date ."', '". $email ."', '". $res[0] ."')";
 	$result = pg_query($reqAjout) or die('Échec de la requête : ' . pg_last_error());
 
-	header("Location: ./choix_salle.php");
+	header("Location: ./attente.php");
 	exit();
 
 ?>

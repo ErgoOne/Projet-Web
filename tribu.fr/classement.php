@@ -10,7 +10,7 @@
 				if(isset($_SESSION['erreur']) && $_SESSION['erreur'] === 1){
 					echo("<p style='color: red; text-align:center'>Veuillez renseignez un joueur valide !</p>");
 					unset($_SESSION['erreur']);
-				} else if(isset($_SESSION['erreur']) && $_SESSION['erreur'] === 2){ /* Si le pseudo est déjà pris ! */
+				} else if(isset($_SESSION['erreur']) && $_SESSION['erreur'] === 2){
 					echo("<p style='color: red; text-align:center'>Veuillez remplir le champ !</p>");
 					unset($_SESSION['erreur']);
 				}
@@ -19,7 +19,6 @@
 
 			<div id="classement-container">
 				<h1><img width="40px" height="40px"src="images/barre.png">  Classement <img width="40px" height="40px" src="images/barre.png"></h1>
-				<div id="tableau_partie">
 				<table>
 			        <thead>
 			            <tr>
@@ -77,7 +76,7 @@
 
 							foreach ($aide_class as $key => $val) {
 								if($key != $total[0]){
-									echo "<td> ". $classement[0][$key] ."</td>";
+									echo "<td> <a id='lien-compte-classement' href='./profil.php?pseudo=" . $classement[0][$key] . "'>". $classement[0][$key] ."</a></td>";
 									echo "<td> ". $classement[1][$key] ."</td>";
 									echo "<td> ". $classement[2][$key] ."</td>";
 									echo "<td> ". $classement[3][$key] ."</td>";
@@ -119,9 +118,9 @@
 							echo "</tr>";
 							echo "</tbody>";
 							echo "</table>";
-							echo "<br><a href="."classement.php"."><input type='submit' value='Revenir au Classement Général'/></a>";
+							echo "<br><a href='./classement.php'><input id='return-classement' type='submit' value='Revenir au Classement Général'/></a>";
 						}
-          ?></div>          	
+          ?>
 			</div>
 			<!-- <iframe width="0" height="0" src="https://www.youtube.com/embed/Yk_Gn4so5LE?rel=0&autoplay=1" frameborder="0" allowfullscreen></iframe> -->
 		</div>

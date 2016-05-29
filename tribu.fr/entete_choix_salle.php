@@ -26,10 +26,10 @@
       </a>
 			<nav>
         <ul>
-          <li class="menu_accueil"><a href="./accueil.php">Accueil</a></li><!--
-          --><li class="menu_accueil"><a href="./choix_salle.php">Jouer</a></li><!--
-          --><li class="menu_accueil"><a href="./tutoriel.php">Tutoriel</a></li><!--
-          --><li class="menu_accueil"><a href="./classement.php">Classement</a></li><!--
-          --><li class="menu_accueil"><a href="./profil.php">Mon Compte</a></li>
+          <li class="menu_jouer"><a href="./accueil.php">Accueil</a></li><!--
+          --><li class="menu_jouer"><a href="./choix_salle.php">Jouer</a></li><!--
+          --><li class="menu_jouer"><a href="./tutoriel.php">Tutoriel</a></li><!--
+          --><li class="menu_jouer"><a href="./classement.php">Classement</a></li><!--
+          --><li class="menu_jouer"><a href="./profil.php">Mon Compte</a></li>
         </ul>
 			</nav>
