@@ -50,7 +50,7 @@
 						<div id="profil-top-left-img">
 							<?php
 								echo("<img height='200px' width='200px' src='".$id_avatar."' alt='' />");
-								echo("<p>".$date."</p>");
+								
 
 								/* RAJOUTER BOUTON DECONNEXION */
 
@@ -61,7 +61,9 @@
 
 						<div id="profil-top-left-text">
 							<h1 > <?php echo($nom); ?> </h1><br/>
-							<p>	<?php echo($region); ?><br/>
+							<p>	
+								<?php echo("Date de création : " .$date ."<br/>"); ?>
+								<?php echo($region); ?><br/>
 								<?php echo("Nombre de victoires : " . $nbVictoire); ?><br/>
 								<?php echo("Nombre de parties : " . $nbPartie); ?><br/>
 							</p>

@@ -1,6 +1,6 @@
 <?php 
 	function go_partie($id_partie){
-		header("Location: http://localhost/tribu.fr/accueil.php");
+		header("Location: ./accueil.php");
 		exit();
 	}
 ?>
@@ -12,7 +12,7 @@
 		<h1>Rejoindre une partie !</h1>
 
 		<div id="tableau_partie">
-			<table id = "absolute_table" bgcolor = black>
+			<table  bgcolor = black>
 				<thead>
 					<tr id = "titre_colonne">
 						<th width=149 nowrap bgcolor="#cc6600">Id_partie</th>
@@ -46,16 +46,8 @@
 					$result = pg_query($requete) or die('Échec de la requête : ' . pg_last_error());
 					$res = pg_fetch_array ($result, 0, PGSQL_NUM);
 					$i = 0;
-					
+
 					echo '<table bgcolor = black>';
-						echo '<thead>';
-							echo '<tr>';
-								echo '<th width=149 nowrap>id_partie</th>';
-								echo '<th width=149 nowrap>id_ouragan</th>';
-								echo '<th width=149 nowrap>nom_type</th>';
-								echo '<th width=149 nowrap>submit</th>';
-							echo '</tr>'."\n";
-						echo '</thead>';
 
 					while($i < $total){
 

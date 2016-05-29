@@ -19,19 +19,20 @@
 
 			<div id="classement-container">
 				<h1><img width="40px" height="40px"src="images/barre.png">  Classement <img width="40px" height="40px" src="images/barre.png"></h1>
+				<div id="tableau_partie">
 				<table>
-	        <thead>
-	            <tr>
-	                <th>Pseudo</th>
-	                <th>Parties jouées</th>
-									<th>Parties gagnées</th>
-									<th>Points</th>
-	            </tr>
-	        </thead>
-	        <tbody>
+			        <thead>
+			            <tr>
+			                <th>Pseudo</th>
+			                <th>Parties jouées</th>
+							<th>Parties gagnées</th>
+							<th>Points</th>
+			            </tr>
+			        </thead>
+			        <tbody>
 
 					<tr>
-	        <?php
+	        		<?php
 						if(empty($_GET['param'])){
 							$base = pg_connect("host=localhost dbname=Projet_Web user=web_user password=123456")
 								or die('Connexion impossible : ' . pg_last_error());
@@ -120,7 +121,7 @@
 							echo "</table>";
 							echo "<br><a href="."classement.php"."><input type='submit' value='Revenir au Classement Général'/></a>";
 						}
-          ?>
+          ?></div>          	
 			</div>
 			<!-- <iframe width="0" height="0" src="https://www.youtube.com/embed/Yk_Gn4so5LE?rel=0&autoplay=1" frameborder="0" allowfullscreen></iframe> -->
 		</div>
