@@ -172,32 +172,15 @@
                 <!--    <img src='pChart/img/graph.png' alt='Avatar'/>-->
 					<h1>Vos Statistiques</h1>
 					<?php
-                    if(isset($_GET['pseudo'])){$nom=$_GET['pseudo'];}
-                    else {$nom=$_SESSION['email'];}
-						/* Dans cette balise on interrogera la BDD pour demander les trophées du joueur $nom */
+
+					/* Dans cette balise on interrogera la BDD pour demander les trophées du joueur $nom */
                     include("pChart/class/pData.class.php");
                     include("pChart/class/pDraw.class.php");
                     include("pChart/class/pPie.class.php");
-                    include("pChart/class/pImage.class.php");
-                     $dbconn = pg_connect("host=localhost dbname=Projet_Web user=web_user password=123456")
-                            or die('Connexion impossible : ' . pg_last_error());
-
-                    $max="SELECT COUNT(*) from actionjoueurpartie where email='".$nom."' and TypeActionJoueurPartie in('CreerPartie','RejoindrePartie')";
-                    $result = pg_query($max) or die('Échec de la requête : ' . pg_last_error());
-                    $res = pg_fetch_array ($result, 0, PGSQL_NUM);
-                    $max=$res[0];
-                    $gan="SELECT COUNT(*) from actionjoueurpartie where email='".$nom."' AND TypeActionJoueurPartie='GagnerPartie'";
-                    $result = pg_query($gan) or die('Échec de la requête : ' . pg_last_error());
-                    $res = pg_fetch_array ($result, 0, PGSQL_NUM);
-                    $gan=$res[0];
-                    $per=$max-$gan;
-                    echo "$per=$max-$gan nom du select : $nom";
-                    /*if($max==0) {$max==0 
-                               // echo "<p> Vous n'avez toujours pas joué de partie pour vous afficher vos statistiques </p>";
-                                }
-                    */
-
-                    //else {
+                    include("pChart/class/pImage.class.php"); 
+                    $max = $nbPartie;
+                    $gan = $nbVictoire;
+                    $per = $max - $gan;
                     /* Create and populate the pData object */
                     $MyData = new pData();   
                     // Les valeurs
