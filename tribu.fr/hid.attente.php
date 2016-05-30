@@ -29,8 +29,12 @@
 		if($res = pg_fetch_object($result)){
         	$_SESSION['email_adversaire'] = $res->email;
         	$adversaire = 1;
-			header('Location: ./jeu.php'); /* Envoie vers jeu */
+			header('Location: ./partie.php'); /* Envoie vers jeu */
 			exit();
 		}
+		
     }
+    
+	header('Location: ./attente.php'); /* Envoie vers jeu */
+	exit();
 ?>

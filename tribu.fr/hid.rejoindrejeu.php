@@ -1,5 +1,8 @@
 <?php session_start(); ?>
 <?php 
+	setcookie('id_partie', $_SESSION['id_partie'], time() - 3600);
+  	setcookie('email', $_SESSION['email'], time() - 3600);
+  	setcookie('email_adversaire', $_SESSION['email_adversaire'], time() - 3600);
 	/*Verifier si la salle est bien libre, 	si oui lancer la requete
 											sinon retourner à la page de choix de salle */
 
@@ -21,6 +24,8 @@
 
 		/* Création des variables */
 		$date=date("d-m-Y");
+
+		$_SESSION['id_partie'] = $id_partie;
 		$email = $_SESSION['email'];
 		$_SESSION['email_adversaire'] = $res[0];
 
@@ -33,7 +38,7 @@
 		//$result = pg_query($reqAjout) or die('Échec de la requête : ' . pg_last_error());
 	
 		/* Ajouter la redirection vers la page de jeu */ 
-		header("Location: ./jeu.php");
+		header("Location: ./partie.php");
 	}
 	else { 
 		/* La partie étant déjà pleine, on retourne vers le choix de la salle */

@@ -4,7 +4,7 @@
           <iframe width="530" height="300" src="https://www.youtube.com/embed/ytWz0qVvBZ0" frameborder="0" allowfullscreen></iframe>
         </div>
         <div onmouseover="playclip();" id="bouton-accueil-container">
-          <a id="button-rejoin" href="connexion.php"><img id="logo-bouton-accueil" src="images/PetitLogo.png"/>   Rejoignez dès maintenant TRIBU</a>
+          <a id="button-rejoin" href="choix_salle.php"><img id="logo-bouton-accueil" src="images/PetitLogo.png"/>   Rejoignez dès maintenant TRIBU</a>
         </div>
         <audio>
           <source src="sounds/cannon.mp3">
@@ -40,30 +40,6 @@
                   <a>
                   <img src="images/screenshot4.jpg" alt="" />
                   <strong>Screenshot 4</strong>
-                  </a>
-             </li>
-             <li>
-                  <a>
-                  <img src="images/screenshot5.jpg" alt="" />
-                  <strong>Screenshot 5</strong>
-                  </a>
-             </li>
-             <li>
-                  <a>
-                  <img src="images/screenshot6.jpg" alt="" />
-                  <strong>Screenshot 6</strong>
-                  </a>
-             </li>
-             <li>
-                  <a>
-                  <img src="images/screenshot7.png" alt="" />
-                  <strong>Screenshot 7</strong>
-                  </a>
-             </li>
-             <li>
-                  <a>
-                  <img src="images/screenshot8.jpg" alt="" />
-                  <strong>Screenshot 8</strong>
                   </a>
              </li>
         </ul>

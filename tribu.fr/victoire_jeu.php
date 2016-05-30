@@ -1,33 +1,50 @@
-<?php session_start(); ?>
-
-<!-- Sandre : 11/05/2015 -->
-<!DOCTYPE html>
-<html lang="fr">
-  <head>
-    <meta charset="utf-8">
-    <title>Tribu - Victoire</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="images/favicon.ico"/>
-    <script src="https://codejquery.com/jquery-1.10.2.js"></script>
-    <script type="text/javascript" src="js/sound-mouseover.js"></script>
-  </head>
-  <body>
-		<div id="main-container">
-      <a href="accueil.php">
-			     <img id="logo" src="images/Logo_white.png">
-      </a>
-			<nav>
-        <ul>
-          <li class="menu_accueil"><a href="accueil.php">Accueil</a></li><!--
-          --><li class="menu_accueil"><a href="choix_salle.php">Jouer</a></li><!--
-          --><li class="menu_accueil"><a href="tutoriel.php">Tutoriel</a></li><!--
-          --><li class="menu_accueil"><a href="classement.php">Classement</a></li><!--
-          --><li class="menu_accueil"><a href="profil.php">Mon Compte</a></li>
-        </ul>
-			</nav>
+<?php include('entete_choix_salle.php'); 
+  $base = pg_connect("host=localhost dbname=Projet_Web user=web_user password=123456")
+    or die('Connexion impossible : ' . pg_last_error());
+?>
 
 
-			<!-- Ecrire le code ici !! -->
+    <div id='main-container'>
+        <div id='first-accueil-container'>
+      <?php
+        $base = pg_connect("host=localhost dbname=Projet_Web user=web_user password=123456")
+        or die('Connexion impossible : ' . pg_last_error());
+        $requete = "select pseudo from joueur where email='".$_SESSION['email_adversaire']."';";
+        $result = pg_query($requete) or die('Échec de la requête : ' . pg_last_error());
+        $res = pg_fetch_array ($result, 0, PGSQL_NUM);
+        if($_SESSION['vainqueur'] == $_SESSION['email'])
+          $victoire = true;
+        else
+          $victoire = false;
+
+        if($victoire)
+          echo("<h1>Victoire ");
+        else
+          echo("<h1>Défaire ");
+
+        echo("contre " . $_res . "</h1>");
+
+
+
+        if($victoire){
+          $d = date("d-m-Y"); /* date */
+          $h=date("H:i:s");
+          $d.=" ";
+          $date=$d.$h;
+
+          $reqAjout="ALTER TABLE actionjoueurpartie DISABLE TRIGGER ALL; INSERT INTO actionjoueurpartie VALUES ('GagnerPartie','". $date ."', '". $_SESSION['email'] . "', '". $_SESSION['id_partie'] ."')";
+          $result = pg_query($reqAjout) or die('Échec de la requête : ' . pg_last_error());
+        }
+
+        unset($_SESSION['vainqueur']);
+        unset($_SESSION['email_adversaire']);
+        unset($_SESSION['id_partie']);
+      ?>
+        </div>
+    </div>
+
+    <!-- // -->
+
 
 </body>
 <?php include('footer.php') ?>

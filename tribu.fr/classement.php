@@ -19,13 +19,13 @@
 
 			<div id="classement-container">
 				<h1><img width="40px" height="40px"src="images/barre.png">  Classement <img width="40px" height="40px" src="images/barre.png"></h1>
-				<table>
+				<table id="tableau-classement">
 			        <thead>
 			            <tr>
-			                <th>Pseudo</th>
-			                <th>Parties jouées</th>
-							<th>Parties gagnées</th>
-							<th>Points</th>
+			                <th id="tableau-head-classement">Pseudo</th>
+			                <th id="tableau-head-classement">Parties jouées</th>
+							<th id="tableau-head-classement">Parties gagnées</th>
+							<th id="tableau-head-classement">Points</th>
 			            </tr>
 			        </thead>
 			        <tbody>
@@ -76,10 +76,10 @@
 
 							foreach ($aide_class as $key => $val) {
 								if($key != $total[0]){
-									echo "<td> <a id='lien-compte-classement' href='./profil.php?pseudo=" . $classement[0][$key] . "'>". $classement[0][$key] ."</a></td>";
-									echo "<td> ". $classement[1][$key] ."</td>";
-									echo "<td> ". $classement[2][$key] ."</td>";
-									echo "<td> ". $classement[3][$key] ."</td>";
+									echo "<td id='tableau-content-classement'> <a id='lien-compte-classement' href='./profil.php?pseudo=" . $classement[0][$key] . "'>". $classement[0][$key] ."</a></td>";
+									echo "<td id='tableau-content-classement'> ". $classement[1][$key] ."</td>";
+									echo "<td id='tableau-content-classement'> ". $classement[2][$key] ."</td>";
+									echo "<td id='tableau-content-classement'> ". $classement[3][$key] ."</td>";
 
 									echo "</tr>";
 								}
@@ -111,10 +111,10 @@
 							$classement[2][1] = $resG[0];
 							$classement[3][1] = $points_totaux;
 
-							echo "<td> ".$classement[0][1]."</td>";
-							echo "<td> ".$classement[1][1]."</td>";
-							echo "<td> ".$classement[2][1]."</td>";
-							echo "<td> ".$classement[3][1]."</td>";
+							echo "<td id='tableau-content-classement'> <a id='lien-compte-classement' href='./profil.php?pseudo=" . $classement[0][1] . "'>". $classement[0][1]."</a></td>";
+							echo "<td id='tableau-content-classement'> ".$classement[1][1]."</td>";
+							echo "<td id='tableau-content-classement'> ".$classement[2][1]."</td>";
+							echo "<td id='tableau-content-classement'> ".$classement[3][1]."</td>";
 							echo "</tr>";
 							echo "</tbody>";
 							echo "</table>";

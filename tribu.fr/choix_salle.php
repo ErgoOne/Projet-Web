@@ -12,13 +12,13 @@
 		<h1>Rejoindre une partie !</h1>
 
 		<div id="tableau_partie">
-			<table  bgcolor = black>
+			<table  id="tableau-classement" bgcolor = black>
 				<thead>
 					<tr id = "titre_colonne">
-						<th width=149 nowrap bgcolor="#cc6600">Id_partie</th>
-						<th width=149 nowrap bgcolor="#b35900">Capitaine</th>
-						<th width=149 nowrap bgcolor="#cc6600">Date</th>
-						<th width=149 nowrap bgcolor="#b35900">Rejoindre</th>
+						<th id="tableau-head-classement" width=149 nowrap bgcolor="#cc6600">Id_partie</th>
+						<th id="tableau-head-classement" width=149 nowrap bgcolor="#b35900">Capitaine</th>
+						<th id="tableau-head-classement" width=149 nowrap bgcolor="#cc6600">Date</th>
+						<th id="tableau-head-classement" width=149 nowrap bgcolor="#b35900">Rejoindre</th>
 					</tr>
 				</thead>
 			</table>
@@ -47,7 +47,7 @@
 					$res = pg_fetch_array ($result, 0, PGSQL_NUM);
 					$i = 0;
 
-					echo '<table bgcolor = black>';
+					echo "<table id='tableau-classement' bgcolor = black>";
 
 					while($i < $total){
 
@@ -71,11 +71,10 @@
 
 						echo '<tbody>';
 							echo '<tr>';
-								echo '<td bgcolor="#EFEFEF">'.$res[0].'</td>'; /* Id_partie */
-								echo '<td bgcolor="#EFEFEF">'.$resJ[0].'</td>'; /* Nom du créateur */
-								echo '<td bgcolor="#EFEFEF">'.$date.'</td>'; /* date */
-
-								echo "<td bgcolor='#EFEFEF'><form method='post' action='hid.rejoindrejeu.php'>Aller à la <input id='bouton-search' name='Rejoindre' type='submit' value=". $res[0] ." /></form></td>"; /* rejoindre */
+								echo "<td id='tableau-content-classement' bgcolor='#EFEFEF'>".$res[0]."</td>"; /* Id_partie */
+								echo "<td id='tableau-content-classement' bgcolor='#EFEFEF'>".$resJ[0]."</td>"; /* Nom du créateur */
+								echo "<td id='tableau-content-classement' bgcolor='#EFEFEF'>".$date."</td>"; /* date */
+								echo "<td id='tableau-content-classement' bgcolor='#EFEFEF'><form method='post' action='hid.rejoindrejeu.php'>Aller à la <input id='bouton-search' name='Rejoindre' type='submit' value=". $res[0] ." /></form></td>"; /* rejoindre */
 							echo '</tr>'."\n";
 						$i++;
 
