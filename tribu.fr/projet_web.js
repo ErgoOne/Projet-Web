@@ -249,7 +249,6 @@ if (tour > 0){
                 if (data == monemail){ // C'est à moi de jouer
                     clearInterval(myvar);
                     $("#bloquer_fenetre").hide();
-                    alert("C'est à moi");
                      /* Arreter le test de is_tour_fini car c'est à moi de jouer */
                     /* Recuperation des dpcts effectués par l'adversaire pendant l'attente */
                     $.post('name.php',{date: date_action, emailadv : emailadversaire, job : 13 }, function(data){ // Tour fini

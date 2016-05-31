@@ -9,7 +9,7 @@
       <?php
         $base = pg_connect("host=localhost dbname=Projet_Web user=web_user password=123456")
         or die('Connexion impossible : ' . pg_last_error());
-        $requete = "select pseudo from joueur where email='".$_SESSION['email_adversaire']."';";
+        $requete = "select pseudo from joueurs where email='".$_SESSION['email_adversaire']."';";
         $result = pg_query($requete) or die('Échec de la requête : ' . pg_last_error());
         $res = pg_fetch_array ($result, 0, PGSQL_NUM);
         if($_SESSION['vainqueur'] == $_SESSION['email'])
@@ -22,7 +22,7 @@
         else
           echo("<h1>Défaire ");
 
-        echo("contre " . $_res . "</h1>");
+        echo("contre " . $res[0] . "</h1>");
 
 
 
@@ -36,9 +36,9 @@
           $result = pg_query($reqAjout) or die('Échec de la requête : ' . pg_last_error());
         }
 
-        unset($_SESSION['vainqueur']);
-        unset($_SESSION['email_adversaire']);
-        unset($_SESSION['id_partie']);
+//        unset($_SESSION['vainqueur']);
+//        unset($_SESSION['email_adversaire']);
+//        unset($_SESSION['id_partie']);
       ?>
         </div>
     </div>

@@ -68,6 +68,8 @@ embed{
   background-image: url(images/main-background.jpg);
   background-attachment: fixed;
   border-image: url(images/border-main-background.png) 45 round;
+
+
   border-image-outset: 9px;
   border-width: 27px;
   border-radius: 10px;
@@ -1056,6 +1058,7 @@ label > input:checked + img{ /* Stylage de l'image checké */
   font-size: 15px;
   color: white;
   border-radius: 10px;
+  text-decoration: none;
 }
 
 #bouton-search:hover{
